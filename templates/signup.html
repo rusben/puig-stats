@@ -1,0 +1,23 @@
+{% extends "hide_navbar_layout.html" %}
+{% block content %}
+            
+<div class="container">
+        <form class="form-signin">
+                <h2 class="form-signin-heading">Crea nova conta</h2>
+                <label for="name">Nom </label>
+                <label for="inputName" class="sr-only">Nom</label>
+                <input type="name" id="inputName" class="form-control" placeholder="Nom" required autofocus>
+                <label for="email">Correu</label>     
+                <label for="inputEmail" class="sr-only">Correu</label>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email" required>
+                <label for="password">Contrasenya</label>
+                <label for="inputPassword" class="sr-only">Contrasenya</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Contrasenya" required autofocus>
+                <label for="passwordConfirm">Confirmar contrasenya</label>
+                <label for="inputPasswordConfirm" class="sr-only">Confirmar contrasenya</label>
+                <input type="password" id="inputPasswordConfirm" class="form-control" placeholder="Contrasenya" required autofocus>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+            </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,170 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<div class="container">
+        <div class="row">
+          <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+            <ul class="nav nav-pills flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="teachers">Professorat</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="cursos">Cursos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="hours">Horaris</a>
+              </li>
+
+              
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#">Export</a>
+              </li>
+            </ul> -->
+
+          </nav>
+
+        
+          <div class="table">
+              <h2>Tasques </h2>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Tasca</th>
+                  <th>Dia</th>
+                  <th>Modificar</th>
+                  <th>Fet</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Examen E.S.O. 4</td>
+                  <td>15/12/2017</td>
+                  <td><button type="button" class="btn btn-outline-primary">Editar</button></td>
+                  <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                  <td>Examen E.S.O. 1</td>
+                  <td>15/12/2017</td>
+                  <td><button type="button" class="btn btn-outline-primary">Editar</button></td>
+                  <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                  <td>Evaluacións</td>
+                  <td>20/12/2017</td>
+                  <td><button type="button" class="btn btn-outline-primary">Editar</button></td>
+                  <td><input type="checkbox"></td>
+
+                </tr>
+                <tr>
+                  <td>Reunió professorat</td>
+                  <td>10/01/2018</td>
+                  <td><button type="button" class="btn btn-outline-primary">Editar</button></td>
+                  <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                  <td>Tutoria E.S.O. 1</td>
+                  <td>15/01/2018</td>
+                  <td><button type="button" class="btn btn-outline-primary">Editar</button></td>
+                  <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                  <td>Preparar examen E.S.O. 1</td>
+                  <td>25/02/2018</td>
+                  <td><button type="button" class="btn btn-outline-primary">Editar</button></td>
+                  <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                  <td>Corregir deures E.S.O. 4</td>
+                  <td>26/02/2018</td>
+                  <td><button type="button" class="btn btn-outline-primary">Editar</button></td>
+                  <td><input type="checkbox"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="container">
+            <button class="btn btn-outline-primary float-right" type="submit">Afegir</button>            
+          </div>
+
+
+          <!--<div class="card" id="profile-card" >
+              <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+              <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                <a href="#" class="btn btn-primary">See Profile</a>
+              </div>
+              <br />-->
+
+<!--
+          <div class="container">
+            <div class="row">
+                <div class="col-4 offset-2">
+                    *Insert user photo here* 
+                </div>          
+                <div class="col-4">
+                  <ul class="list-group">
+                      <li class="list-group-item"> Nom </li>
+                      <li class="list-group-item">Cognoms</li>
+                  </ul>   
+              </div>
+              <div class="col-8 offset-2">
+                  <ul class="list-group">
+                      <li class="list-group-item">Email</li>
+                  </ul>        
+              </div> 
+            </div>
+        </div>
+        <div class="container">
+            <button class="btn btn-outline-primary float-right" type="submit">Editar</button>            
+        </div>
+      -->
+          <div style="width:75%;">
+            <canvas id="canvas"></canvas>
+        </div>
+
+
+        <canvas id="myChart" width="400" height="400"></canvas>
+        <script>
+        var ctx = document.getElementById("myChart");
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        });
+        </script>
+
+          
+{% endblock %}
