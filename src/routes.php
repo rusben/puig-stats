@@ -15,8 +15,37 @@ $app->get('/profile_page', function ($request, $response, $args) {
 
 // CURS ESO 
 $app->get('/curs1reso', function ($request, $response, $args) {
+
+    // $tot_aprobat = array('label' => 'Tot aprobat', 'backgroundColor' => 'window.chartColors.green', 'data' => array(4,5,6,7,8,7));
+
+    $tot_aprobat = new \stdClass;
+
+    $tot_aprobat->label = 'Tot aprobat';
+    $tot_aprobat->backgroundColor = "green";
+    $tot_aprobat->data = array(4,5,6,7,8,7);
+
+    $suspeses1o2 = new \stdClass;
+    $suspeses1o2->label = '1 o 2 suspeses';
+    $suspeses1o2->backgroundColor = "yellow";
+    $suspeses1o2->data =  array(5,6,8,7,5,4);
+
+    $suspeses3o4 = new \stdClass;
+    $suspeses3o4->label = '3 o 4 suspeses';
+    $suspeses3o4->backgroundColor = "orange";
+    $suspeses3o4->data =  array(3,5,1,7,5,2);
+
+    $suspeses5omes = new \stdClass;
+    $suspeses5omes->label = '5 o més suspeses';
+    $suspeses5omes->backgroundColor = "red";
+    $suspeses5omes->data =  array(1,5,7,2,4,3);
+
+   
+    $datasets = array($tot_aprobat, $suspeses1o2, $suspeses3o4, $suspeses5omes);
+
+    
     return $this->view->render($response, 'curs1reso.html', [
-        'name' => $args['name']
+        'name' => $args['name'],
+       'datasets' => json_encode($datasets)
     ]);
 })->setName('curs1reso');
 
