@@ -1,7 +1,7 @@
 {% extends "hide_navbar_layout.html" %}
 {% block content %}
 
-<div class="container">
+<!-- <div class="container">
     <form class="form-signin">
         <h2 class="form-signin-heading">Inicia sessió</h2>
         <label for="inputEmail" class="sr-only">Correu</label>
@@ -11,6 +11,37 @@
         <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Crear conta nova</button>
     </form>  
-</div> 
+</div> -->
+
+<div class="container">
+    <form class="form-signin" role="form">
+        <h2 class="form-signin-heading">Inicia sessió</h2>
+        <div class="form-group">
+            <label for="inputEmail" class="col-sm-2 col-md-2 control-label">Correu</label>
+            <div class="col-sm-6 col-md-6">
+                <input type="text" class="form-control" id="inputEmail" placeholder="janeDoe@gmail.com" tabindex="1">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword" class="col-sm-2 col-md-2 control-label">Contrasenya</label>
+            <div class="col-sm-6 col-md-6">
+                <input type="password" class="form-control" id="inputPassword" placeholder="*********" tabindex="2">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-8 col-sm-offset-2 col-sm-6 col-md-offset-2 col-md-6">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" tabindex="3"> Recordar usuari
+                    </label>
+                </div>
+            </div>
+            <div class="col-xs-10 col-sm-10 col-md-10 submit float-right">
+                <button type="submit" class="btn btn-primary" tabindex="4">Entrar</button>
+                <button type="submit" class="btn btn-primary" tabindex="4">Crear conta nova</button>
+            </div>
+        </div>
+    </form>
+</div><!--/.col-*-->
 
 {% endblock %}

@@ -8,14 +8,15 @@ body {
   }
   footer{
     position: fixed;
-    bottom: 0;
+    bottom: 0px;
   }
+
   #incorrect-login{
       text-align: center;
   }
 
   table{
-    margin-left: 50px;
+    margin-left: 250px;
   }
   
   .row{
@@ -39,10 +40,17 @@ body {
   }
   
   .form-signin {
-    max-width: 330px;
+    
     padding: 15px;
     margin: 0 auto;
+    position: relative;    
+    box-sizing: border-box;
+    
   }
+  .form-signin .form-group{
+    margin-left: 35%;
+  }
+
   .form-signin .form-signin-heading,
   .form-signin .checkbox {
     margin-bottom: 10px;
@@ -118,11 +126,46 @@ body {
   
 }
 
-
-
-
 canvas{
+  margin-left: 250px;
+  user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
 }
+
+
+#profile_image{
+  margin-left: 0px;
+  margin-top: 50px;
+}
+
+#edit{
+  margin-left: 450px;
+  margin-top: -250px;
+}
+
+h1{
+  text-align: center;
+}
+
+h3{
+  margin-left: 250px;;
+}
+
+/*Taula percentatges i numeros cursos*/
+#taula-cursos{
+  text-align: center;
+  margin-left: 250px;
+}
+
+/*Activities list in courses*/
+#activities-list{
+  text-align: center;
+  
+}
+/*Buttons randomize Canvas*/
+#randomizeData{
+  margin-left: 300px;  
+}
+

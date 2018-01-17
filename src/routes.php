@@ -5,12 +5,167 @@ use Slim\Http\Response;
 
 // Routes
 
+
 // Define named route
-$app->get('/hours', function ($request, $response, $args) {
-    return $this->view->render($response, 'hours.html', [
+$app->get('/profile_page', function ($request, $response, $args) {
+    return $this->view->render($response, 'profile_page.html', [
         'name' => $args['name']
     ]);
-})->setName('hours');
+})->setName('profile_page');
+
+// CURS ESO 
+$app->get('/curs1reso', function ($request, $response, $args) {
+    return $this->view->render($response, 'curs1reso.html', [
+        'name' => $args['name']
+    ]);
+})->setName('curs1reso');
+
+
+$app->get('/curs2neso', function ($request, $response, $args) {
+    return $this->view->render($response, 'curs2neso.html', [
+        'name' => $args['name']
+    ]);
+})->setName('curs2neso');
+
+
+$app->get('/curs3reso', function ($request, $response, $args) {
+    return $this->view->render($response, 'curs3reso.html', [
+        'name' => $args['name']
+    ]);
+})->setName('curs3reso');
+
+
+$app->get('/curs4teso', function ($request, $response, $args) {
+    return $this->view->render($response, 'curs4teso.html', [
+        'name' => $args['name']
+    ]);
+})->setName('curs4teso');
+
+// CURS BATXILLERAT ARTISTIC
+$app->get('/curs1rbatArts', function ($request, $response, $args) {
+    return $this->view->render($response, 'curs1rbatArts.html', [
+        'name' => $args['name']
+    ]);
+})->setName('curs1rbatArts');
+
+
+$app->get('/curs2nbatArts', function ($request, $response, $args) {
+    return $this->view->render($response, 'curs2nbatArts.html', [
+        'name' => $args['name']
+    ]);
+})->setName('curs2nbatArts');
+
+// CURS BATXILLERAT HUMANISTIC I CIENCIES SOCIALS
+$app->get('/curs1rbatHumsis', function ($request, $response, $args) {
+    return $this->view->render($response, 'curs1rbatHumsis.html', [
+        'name' => $args['name']
+    ]);
+})->setName('curs1rbatHumsis');
+
+
+$app->get('/curs2nbatHumsis', function ($request, $response, $args) {
+    return $this->view->render($response, 'curs2nbatHumsis.html', [
+        'name' => $args['name']
+    ]);
+})->setName('curs2nbatHumsis');
+
+//CURS BATXILLERAT CIENCIES I TECNOLOGIA
+$app->get('/curs1rbatCientec', function ($request, $response, $args){
+    return $this->view->render($response, 'curs1rbatCientec.html', [
+        'name' => $args['name']
+    ]);
+})->setName('curs1rbatCientec');
+
+$app->get('/curs2nbatCientec', function($request, $response, $args){
+    return $this->view->render($response, 'curs2nbatCientec.html', [
+        'name' => $args['name']
+    ]);
+})->setName('curs2nbatCientec');
+
+//CURS CAS CIENTIFICOTECNOLOGIC
+$app->get('/curscasCientec', function($request, $response, $args){
+    return $this->view->render($response, 'curscasCientec.html', [
+        'name' => $args['name']
+    ]);
+})->setName('curscasCientec');
+
+//CURS CAS HUMANISTIC I SOCIAL
+$app->get('/curscasHumsis', function($request, $response, $args){
+    return $this->view->render($response, 'curscasHumsis.html', [
+        'name' => $args['name']
+    ]);
+})->setName('curscasHumsis');
+
+//CURS ADMINISTRACIÓ I GESTIÓ
+    //GESTIÓ ADMINISTRATIVA
+    $app->get('/curs1rAGga', function($request, $response, $args){
+        return $this->view->render($response, 'curs1rAGga.html', [
+            'name' => $args['name']
+        ]);
+    })->setName('curs1rAGga');
+
+    $app->get('/curs2nAGga', function($request, $response, $args){
+        return $this->view->render($response, 'curs2nAGga.html', [
+            'name' => $args['name']
+        ]);
+    })->setName('curs2nAGga');
+
+    //ADMINISTRACIÓ I FINANCES
+    $app->get('/curs1rAGaf', function($request, $response, $args){
+        return $this->view->render($response, 'curs1rAGaf.html', [
+            'name' => $args['name']
+        ]);
+    })->setName('curs1rAGaf');
+
+    $app->get('/curs2nAGaf', function($request, $response, $args){
+        return $this->view->render($response,'curs2nAGaf.html', [
+            'name' => $args['name']
+        ]);
+    })->setName('curs2nAGaf');
+
+//CURS INFORMÀTICA
+    //SISTEMES MICROINFORMÀTICS I XARXES
+    $app->get('/curs1rsmix', function($request, $response, $args){
+        return $this->view->render($response, 'curs1rsmix.html', [
+            'name' => $args['name']
+        ]);
+    })->setName('curs1rsmix');
+
+    $app->get('/curs2nsmix', function($request, $response, $args){
+        return $this->view->render($response, 'curs2nsmix.html', [
+            'name' => $args['name']
+        ]);
+    })->setName('curs2nsmix');
+
+    //ADMINISTRACIÓ DE SISTEMES INFORMÀTICS EN XARXES
+    $app->get('/curs1rasix', function($request, $response, $args){
+        return $this->view->render($response, 'curs1rasix.html', [
+            'name' => $args['name']
+        ]);
+    })->setName('curs1rasix');
+
+    $app->get('/curs2nasix', function($request, $response, $args){
+        return $this->view->render($response, 'curs2nasix.html', [
+            'name' => $args['name']
+        ]);
+    })->setName('curs2nasix');
+
+    //DESENVOLUPAMENT D'APLICACIONS MULTIPLATAFORMA
+    $app->get('/curs1rdam', function($request, $response, $args){
+        return $this->view->render($response, 'curs1rdam.html', [
+            'name' => $args['name']
+        ]);
+    })->setName('curs1rdam');
+
+    $app->get('/curs2ndam', function($request, $response, $args){
+        return $this->view->render($response, 'curs2ndam.html', [
+            'name' => $args['name']
+        ]);
+    })->setName('curs2ndam');
+
+
+
+
 
 // Define named route
 $app->get('/teachers', function ($request, $response, $args) {

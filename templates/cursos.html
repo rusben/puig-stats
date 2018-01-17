@@ -11,83 +11,122 @@
                 <li class="nav-item">
                     <a class="nav-link" href="cursos">Cursos</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="hours">Horaris</a>
-                </li>
             </ul>
         </nav>
     </div>   
 </div> 
-<div class="container" id="cursos-container">
+
+<!-- List cursos -->
+<div class="container" id="cursos-container"> 
+    <!-- E.S.O. -->  
     <a class="nav-link" data-toggle="collapse" href="#eso-tab" aria-controls="eso-tab" aria-expanded="false">E.S.O.</a>
     <div class="collapse" id="eso-tab">
-        <div class="card card-block">
-            <a> 1r E.S.O.</a>
-            <a> 2n E.S.O.</a>
-            <a> 3r E.S.O.</a>
-            <a> 4t E.S.O.</a>            
+        <div class="card card-body">
+            <a href="curs1reso"> 1r E.S.O.</a>
+            <a href="curs2neso"> 2n E.S.O.</a>
+            <a href="curs3reso"> 3r E.S.O.</a>
+            <a href="curs4teso"> 4t E.S.O.</a>  
         </div>
     </div>
+     <!--END ESO -->
+ 
+    <!-- BATXILLERAT-->
     <a class="nav-link" data-toggle="collapse" href="#bat-tab" aria-controls="bat-tab" aria-expanded="false">Batxillerat</a>
     <div class="collapse" id="bat-tab">
-        <div class="card card-block">
-            <a> 1r Batxillerat</a>
-            <a> 2n Barxillerat</a>
+        <div class="card card-body">
+            <a class="nav-link" data-toggle="collapse" href="#bat-arts-tab" aria-controls="bat-arts-tab" aria-expanded="false">Artistic</a>
+            <div class="collapse" id="bat-arts-tab">
+                <div class="card card-body">
+                    <a href="curs1rbatArts"> 1r Batxillerat</a>
+                    <a href="curs2nbatArts"> 2n Barxillerat</a>
+                </div>
+            </div>
+        </div>
+        <div class="card card-body">
+            <a class="nav-link" data-toggle="collapse" href="#bat-humsis-tab" aria-controls="bat-humsis-tab" aria-expanded="false">Humanístic i Ciencies Socials</a>
+            <div class="collapse" id="bat-humsis-tab">
+                <div class="card card-body">                                
+                    <a href="curs1rbatHumsis"> 1r Batxillerat</a>
+                    <a href="curs2nbatHumsis"> 2n Barxillerat</a>
+                </div>    
+            </div>
+        </div>
+        <div class="card card-body">
+            <a class="nav-link" data-toggle="collapse" href="#bat-cientec-tab" aria-controls="bat-cientec-tab" aria-expanded="false">Ciencies i tecnologia</a>
+            <div class="collapse" id="bat-cientec-tab">
+                <div class="card card-body">                                
+                    <a href="curs1rbatCientec"> 1r Batxillerat</a>
+                    <a href="curs2nbatCientec"> 2n Barxillerat</a>
+                </div>    
+            </div>
         </div>
     </div>
+    <!-- END BATXILLERAT -->
+ 
+    <!-- CAS -->
     <a class="nav-link" data-toggle="collapse" href="#cas-tab" aria-controls="cas-tab" aria-expanded="false">CAS</a>
     <div class="collapse" id="cas-tab">
-        <div class="card card-block">
-            <a>Cientificotecnológic</a>
-            <a>Humanistic i social</a>
+        <div class="card card-body">
+            <a href="curscasCientec">Cientificotecnológic</a>
+            <a href="curscasHumsis">Humanistic i social</a>
         </div>
     </div>
-    <a class="nav-link" data-toggle="collapse" href="#adminGestio-tab" aria-controls="adminGestio-tab" aria-expanded="false">Administració i gestió</a>
-    <div class="collapase" id="adminGestio-tab">
-        <div class="card card-block">
+    <!-- END CAS -->
+ 
+    <!-- ADMINISTRACIÓ I GESTIÓ -->
+    <a class="nav-link" data-toggle="collapse" href="#adminGestio-tab" aria-controls="adminGestio-tab" aria-expanded="false">Administració i Gestió</a>       
+    <div class="collapse" id="adminGestio-tab">
+        <div class="card card-body">
             <a class="nav-link" data-toggle="collapse" href="#gestioAdmin-tab" aria-controls="gestioAdmin-tab" aria-expanded="false">Gestió administrativa</a>
-                <div class="collapse" id="gestioAdmin-tab">
-                    <div class="card card-block">
-                        <a> 1r Gestió administrativa</a>
-                        <a> 2n Gestió administrativa</a>
-                    </div>
+            <div class="collapse" id="gestioAdmin-tab">
+                <div class="card card-body">
+                    <a href="curs1rAGga"> 1r Gestió administrativa</a>
+                    <a href="curs2nAGga"> 2n Gestió administrativa</a>
                 </div>
+            </div>
             <a class="nav-link" data-toggle="collapse" href="#adminFinances-tab" aria-controls="adminFinances-tab" aria-expanded="false">Administració i finances</a>
-                <div class="collapse" id="adminFinances-tab">
-                    <div class="card card-block">
-                        <a> 1r Administració i finances</a>
-                        <a> 2n Administració i finances</a>
-                    </div>
-                </div>
-        </div> 
-    </div>
-    <a class="nav-link" data-toggle="collapse" href="#informatica-tab" aria-controls="informatica-tab" aria-expanded="false">Informàtica</a>       
-    <div class="collapse" id="informatica-tab">
-        <div class="card card-block">
-            <a class="nav-link" data-toggle="collapse" href="#smx-tab" aria-controls="smx-tab" aria-expanded="false">Sistemes microinformàtics i xarxes</a>
-            <div class="collapse" id="smx-tab">
-                <div class="card card-block">
-                    <a> 1r Sistemes microinformàtics i xarxes</a>
-                    <a> 2n Sistemes microinformàtics i xarxes</a>
-                </div>
-            </div>
-            <a class="nav-link" data-toggle="collapse" href="#asix-tab" aria-controls="asix-tab" aria-expanded="false">Administració de sistemes informàtics en xarxes</a>
-            <div class="collapse" id="asix-tab">
-                <div class="card card-block">
-                    <a> 1r Administració de sistemes informàtics en xarxes</a>
-                    <a> 2n Administració de sistemes informàtics en xarxes</a>
-                </div>
-            </div>
-            <a class="nav-link" data-toggle="collapse" href="#dam-tab" aria-controls="dam-tab" aria-expanded="false">Desenvolupament d'aplicacions multiplataforma</a>
-            <div class="collapse" id="dam-tab">
-                <div class="card card-block">
-                    <a> 1r Desenvolupament d'aplicacions multiplataforma</a>
-                    <a> 2n Desenvolupament d'aplicacions multiplataforma</a>
+            <div class="collapse" id="adminFinances-tab">
+                <div class="card card-body">
+                    <a href="curs1rAGaf"> 1r Administració i finances</a>
+                    <a href="curs2nAGaf"> 2n Administració i finances</a>
                 </div>
             </div>
         </div>      
     </div>
-</div>  
+    <!-- END ADMINISTRACIÓ I GESTIÓ -->
+ 
+    <!-- INFORMATICA -->
+    <a class="nav-link" data-toggle="collapse" href="#informatica-tab" aria-controls="informatica-tab" aria-expanded="false">Informàtica</a>       
+    <div class="collapse" id="informatica-tab">
+        <div class="card card-body">
+            <a class="nav-link" data-toggle="collapse" href="#smx-tab" aria-controls="smx-tab" aria-expanded="false">Sistemes microinformàtics i xarxes</a>
+            <div class="collapse" id="smx-tab">
+                <div class="card card-body">
+                    <a href="curs1rsmix"> 1r Sistemes microinformàtics i xarxes</a>
+                    <a href="curs2nsmix"> 2n Sistemes microinformàtics i xarxes</a>
+                </div>
+            </div>
+            <a class="nav-link" data-toggle="collapse" href="#asix-tab" aria-controls="asix-tab" aria-expanded="false">Administració de sistemes informàtics en xarxes</a>
+            <div class="collapse" id="asix-tab">
+                <div class="card card-body">
+                    <a href="curs1rasix"> 1r Administració de sistemes informàtics en xarxes</a>
+                    <a href="curs2nasix"> 2n Administració de sistemes informàtics en xarxes</a>
+                </div>
+            </div>
+            <a class="nav-link" data-toggle="collapse" href="#dam-tab" aria-controls="dam-tab" aria-expanded="false">Desenvolupament d'aplicacions multiplataforma</a>
+            <div class="collapse" id="dam-tab">
+                <div class="card card-body">
+                    <a href="curs1rdam"> 1r Desenvolupament d'aplicacions multiplataforma</a>
+                    <a href="curs2ndam"> 2n Desenvolupament d'aplicacions multiplataforma</a>
+                </div>
+            </div>
+        </div>      
+    </div>
+    <!-- END INFORMATICA -->
+
+</div> 
+<!-- End list cursos -->
+
 
 <script type="text/javascript">
     $('.collapse').collapse()
