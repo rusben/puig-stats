@@ -2,10 +2,9 @@
 
 use Slim\Http\Request;
 use Slim\Http\Response;
+use App\Service\StatsService;
 
 // Routes
-
-
 // Define named route
 $app->get('/profile_page', function ($request, $response, $args) {
     return $this->view->render($response, 'profile_page.html', [
@@ -16,30 +15,48 @@ $app->get('/profile_page', function ($request, $response, $args) {
 // CURS ESO 
 $app->get('/curs1reso', function ($request, $response, $args) {
 
-    // $tot_aprobat = array('label' => 'Tot aprobat', 'backgroundColor' => 'window.chartColors.green', 'data' => array(4,5,6,7,8,7));
-
     $tot_aprobat = new \stdClass;
-
     $tot_aprobat->label = 'Tot aprobat';
     $tot_aprobat->backgroundColor = "green";
-    $tot_aprobat->data = array(4,5,6,7,8,7);
+
+    $params['filter'] = 'tot-aprobat';
+    $params['idESO'] = 1;
+
+    $tot_aprobat->data = $this->StatsService->getESOStats($params);
 
     $suspeses1o2 = new \stdClass;
     $suspeses1o2->label = '1 o 2 suspeses';
     $suspeses1o2->backgroundColor = "yellow";
-    $suspeses1o2->data =  array(5,6,8,7,5,4);
+    
+    
+    $params['filter'] = '1o2-suspeses';
+    $params['idESO'] = 1;
+
+    $suspeses1o2->data = $this->StatsService->getESOStats($params);
+    
 
     $suspeses3o4 = new \stdClass;
     $suspeses3o4->label = '3 o 4 suspeses';
     $suspeses3o4->backgroundColor = "orange";
-    $suspeses3o4->data =  array(3,5,1,7,5,2);
+
+    $params['filter'] = '3o4-suspeses';
+    $params['idESO'] = 1;
+
+    $suspeses3o4->data = $this->StatsService->getESOStats($params);
+
+
 
     $suspeses5omes = new \stdClass;
     $suspeses5omes->label = '5 o més suspeses';
     $suspeses5omes->backgroundColor = "red";
-    $suspeses5omes->data =  array(1,5,7,2,4,3);
+
+    $params['filter'] = '5omes-suspeses';
+    $params['idESO'] = 1;
+
+    $suspeses5omes->data = $this->StatsService->getESOStats($params);
 
    
+
     $datasets = array($tot_aprobat, $suspeses1o2, $suspeses3o4, $suspeses5omes);
 
     
@@ -51,6 +68,56 @@ $app->get('/curs1reso', function ($request, $response, $args) {
 
 
 $app->get('/curs2neso', function ($request, $response, $args) {
+
+    $tot_aprobat = new \stdClass;
+    $tot_aprobat->label = 'Tot aprobat';
+    $tot_aprobat->backgroundColor = "green";
+
+    $params['filter'] = 'tot-aprobat';
+    $params['idESO'] = 2;
+
+    $tot_aprobat->data = $this->StatsService->getESOStats($params);
+
+    $suspeses1o2 = new \stdClass;
+    $suspeses1o2->label = '1 o 2 suspeses';
+    $suspeses1o2->backgroundColor = "yellow";
+    
+    
+    $params['filter'] = '1o2-suspeses';
+    $params['idESO'] = 2;
+
+    $suspeses1o2->data = $this->StatsService->getESOStats($params);
+    
+
+    $suspeses3o4 = new \stdClass;
+    $suspeses3o4->label = '3 o 4 suspeses';
+    $suspeses3o4->backgroundColor = "orange";
+
+    $params['filter'] = '3o4-suspeses';
+    $params['idESO'] = 2;
+
+    $suspeses3o4->data = $this->StatsService->getESOStats($params);
+
+
+
+    $suspeses5omes = new \stdClass;
+    $suspeses5omes->label = '5 o més suspeses';
+    $suspeses5omes->backgroundColor = "red";
+
+    $params['filter'] = '5omes-suspeses';
+    $params['idESO'] = 2;
+
+    $suspeses5omes->data = $this->StatsService->getESOStats($params);
+
+   
+
+    $datasets = array($tot_aprobat, $suspeses1o2, $suspeses3o4, $suspeses5omes);
+
+    print_r($datasets);
+    die();
+
+
+
     return $this->view->render($response, 'curs2neso.html', [
         'name' => $args['name']
     ]);
@@ -312,3 +379,7 @@ $app->get('/[{name}]', function (Request $request, Response $response, array $ar
     // Render index view
     return $this->renderer->render($response, 'index.phtml', $args);
 });
+
+
+
+

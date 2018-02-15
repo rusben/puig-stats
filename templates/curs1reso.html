@@ -1,9 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="jumbotron">
-
-    
-
     <h1 class="display-6">INFORMACIÓ ACADÈMICA 1R ESO</h1>
     <hr class="my-4">
 </div>
@@ -473,23 +470,20 @@
 <script>
 
 window.onload = function() {
-
-
     var encodedStr = '{{ datasets }}';
+    var parser = new DOMParser;
+    var dom = parser.parseFromString(
+        '<!doctype html><body>' + encodedStr,
+        'text/html');
+    var decodedString = dom.body.textContent;
 
-var parser = new DOMParser;
-var dom = parser.parseFromString(
-    '<!doctype html><body>' + encodedStr,
-    'text/html');
-var decodedString = dom.body.textContent;
-
-console.log(JSON.parse(decodedString));
+    console.log(JSON.parse(decodedString));
 
 
 
 
     var barChartData = {
-        labels: ["1r A", "1r B", "1r C", "1r D", "1r E", "1r F"],
+        labels: ["1r A", "1r B", "1r C", "1r D"],
         datasets: JSON.parse(decodedString)
     };
 
@@ -504,7 +498,7 @@ console.log(JSON.parse(decodedString));
         options: {
             title:{
                 display:true,
-                text:"Chart.js Bar Chart - Stacked"
+                text:"Informació 1r E.S.O."
             },
             tooltips: {
                 mode: 'index',

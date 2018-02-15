@@ -50,3 +50,8 @@ $container['db'] = function ($c) {
     return $dbh;
 
 };
+
+//StatsService Class
+$container['StatsService'] = function($c){
+    return new \App\Service\StatsService($c['db']);
+};
