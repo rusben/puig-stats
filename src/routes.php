@@ -13,7 +13,7 @@ $app->get('/profile_page', function ($request, $response, $args) {
 })->setName('profile_page');
 
 // CURS ESO 
-$app->get('/curs1reso', function ($request, $response, $args) {
+    $app->get('/curs1reso', function ($request, $response, $args) {
 
     $tot_aprobat = new \stdClass;
     $tot_aprobat->label = 'Tot aprobat';
@@ -64,10 +64,10 @@ $app->get('/curs1reso', function ($request, $response, $args) {
         'name' => $args['name'],
        'datasets' => json_encode($datasets)
     ]);
-})->setName('curs1reso');
+    })->setName('curs1reso');
 
 
-$app->get('/curs2neso', function ($request, $response, $args) {
+    $app->get('/curs2neso', function ($request, $response, $args) {
 
     $tot_aprobat = new \stdClass;
     $tot_aprobat->label = 'Tot aprobat';
@@ -113,29 +113,118 @@ $app->get('/curs2neso', function ($request, $response, $args) {
 
     $datasets = array($tot_aprobat, $suspeses1o2, $suspeses3o4, $suspeses5omes);
 
-    print_r($datasets);
-    die();
-
-
-
+    
     return $this->view->render($response, 'curs2neso.html', [
-        'name' => $args['name']
+        'name' => $args['name'],
+       'datasets' => json_encode($datasets)
     ]);
-})->setName('curs2neso');
+    })->setName('curs2neso');
 
 
-$app->get('/curs3reso', function ($request, $response, $args) {
+    $app->get('/curs3reso', function ($request, $response, $args) {
+    $tot_aprobat = new \stdClass;
+    $tot_aprobat->label = 'Tot aprobat';
+    $tot_aprobat->backgroundColor = "green";
+
+    $params['filter'] = 'tot-aprobat';
+    $params['idESO'] = 3;
+
+    $tot_aprobat->data = $this->StatsService->getESOStats($params);
+
+    $suspeses1o2 = new \stdClass;
+    $suspeses1o2->label = '1 o 2 suspeses';
+    $suspeses1o2->backgroundColor = "yellow";
+    
+    
+    $params['filter'] = '1o2-suspeses';
+    $params['idESO'] = 3;
+
+    $suspeses1o2->data = $this->StatsService->getESOStats($params);
+    
+
+    $suspeses3o4 = new \stdClass;
+    $suspeses3o4->label = '3 o 4 suspeses';
+    $suspeses3o4->backgroundColor = "orange";
+
+    $params['filter'] = '3o4-suspeses';
+    $params['idESO'] = 3;
+
+    $suspeses3o4->data = $this->StatsService->getESOStats($params);
+
+
+
+    $suspeses5omes = new \stdClass;
+    $suspeses5omes->label = '5 o més suspeses';
+    $suspeses5omes->backgroundColor = "red";
+
+    $params['filter'] = '5omes-suspeses';
+    $params['idESO'] = 3;
+
+    $suspeses5omes->data = $this->StatsService->getESOStats($params);
+
+   
+
+    $datasets = array($tot_aprobat, $suspeses1o2, $suspeses3o4, $suspeses5omes);
+
+    
     return $this->view->render($response, 'curs3reso.html', [
-        'name' => $args['name']
+        'name' => $args['name'],
+       'datasets' => json_encode($datasets)
     ]);
-})->setName('curs3reso');
+    })->setName('curs3reso');
 
 
-$app->get('/curs4teso', function ($request, $response, $args) {
+    $app->get('/curs4teso', function ($request, $response, $args) {
+    $tot_aprobat = new \stdClass;
+    $tot_aprobat->label = 'Tot aprobat';
+    $tot_aprobat->backgroundColor = "green";
+
+    $params['filter'] = 'tot-aprobat';
+    $params['idESO'] = 4;
+
+    $tot_aprobat->data = $this->StatsService->getESOStats($params);
+
+    $suspeses1o2 = new \stdClass;
+    $suspeses1o2->label = '1 o 2 suspeses';
+    $suspeses1o2->backgroundColor = "yellow";
+    
+    
+    $params['filter'] = '1o2-suspeses';
+    $params['idESO'] = 4;
+
+    $suspeses1o2->data = $this->StatsService->getESOStats($params);
+    
+
+    $suspeses3o4 = new \stdClass;
+    $suspeses3o4->label = '3 o 4 suspeses';
+    $suspeses3o4->backgroundColor = "orange";
+
+    $params['filter'] = '3o4-suspeses';
+    $params['idESO'] = 4;
+
+    $suspeses3o4->data = $this->StatsService->getESOStats($params);
+
+
+
+    $suspeses5omes = new \stdClass;
+    $suspeses5omes->label = '5 o més suspeses';
+    $suspeses5omes->backgroundColor = "red";
+
+    $params['filter'] = '5omes-suspeses';
+    $params['idESO'] = 4;
+
+    $suspeses5omes->data = $this->StatsService->getESOStats($params);
+
+   
+
+    $datasets = array($tot_aprobat, $suspeses1o2, $suspeses3o4, $suspeses5omes);
+
+    
     return $this->view->render($response, 'curs4teso.html', [
-        'name' => $args['name']
+        'name' => $args['name'],
+       'datasets' => json_encode($datasets)
     ]);
-})->setName('curs4teso');
+    })->setName('curs4teso');
 
 // CURS BATXILLERAT ARTISTIC
 $app->get('/curs1rbatArts', function ($request, $response, $args) {
@@ -195,67 +284,458 @@ $app->get('/curscasHumsis', function($request, $response, $args){
 //CURS ADMINISTRACIÓ I GESTIÓ
     //GESTIÓ ADMINISTRATIVA
     $app->get('/curs1rAGga', function($request, $response, $args){
+        $tot_aprobat = new \stdClass;
+        $tot_aprobat->label = 'Tot aprobat';
+        $tot_aprobat->backgroundColor = "green";
+    
+        $params['filter'] = 'tot-aprobat';
+        $params['idFP'] = 8;
+    
+        $tot_aprobat->data = $this->StatsService->getFPStats($params);
+    
+        $suspeses1o2 = new \stdClass;
+        $suspeses1o2->label = '1 o 2 suspeses';
+        $suspeses1o2->backgroundColor = "yellow";
+        
+        $params['filter'] = '1o2-suspeses';
+        $params['idFP'] = 8;
+    
+        $suspeses1o2->data = $this->StatsService->getFPStats($params);
+    
+        $suspeses3o4 = new \stdClass;
+        $suspeses3o4->label = '3 o 4 suspeses';
+        $suspeses3o4->backgroundColor = "orange";
+    
+        $params['filter'] = '3o4-suspeses';
+        $params['idFP'] = 8;
+    
+        $suspeses3o4->data = $this->StatsService->getFPStats($params);
+
+        $suspeses5omes = new \stdClass;
+        $suspeses5omes->label = '5 o més suspeses';
+        $suspeses5omes->backgroundColor = "red";
+    
+        $params['filter'] = '5omes-suspeses';
+        $params['idFP'] = 8;
+    
+        $suspeses5omes->data = $this->StatsService->getFPStats($params);
+
+        $datasets = array($tot_aprobat, $suspeses1o2, $suspeses3o4, $suspeses5omes);
+
         return $this->view->render($response, 'curs1rAGga.html', [
-            'name' => $args['name']
+            'name' => $args['name'],
+           'datasets' => json_encode($datasets)
         ]);
     })->setName('curs1rAGga');
 
     $app->get('/curs2nAGga', function($request, $response, $args){
+        $tot_aprobat = new \stdClass;
+        $tot_aprobat->label = 'Tot aprobat';
+        $tot_aprobat->backgroundColor = "green";
+    
+        $params['filter'] = 'tot-aprobat';
+        $params['idFP'] = 9;
+    
+        $tot_aprobat->data = $this->StatsService->getFPStats($params);
+    
+        $suspeses1o2 = new \stdClass;
+        $suspeses1o2->label = '1 o 2 suspeses';
+        $suspeses1o2->backgroundColor = "yellow";
+        
+        $params['filter'] = '1o2-suspeses';
+        $params['idFP'] = 9;
+    
+        $suspeses1o2->data = $this->StatsService->getFPStats($params);
+    
+        $suspeses3o4 = new \stdClass;
+        $suspeses3o4->label = '3 o 4 suspeses';
+        $suspeses3o4->backgroundColor = "orange";
+    
+        $params['filter'] = '3o4-suspeses';
+        $params['idFP'] = 9;
+    
+        $suspeses3o4->data = $this->StatsService->getFPStats($params);
+
+        $suspeses5omes = new \stdClass;
+        $suspeses5omes->label = '5 o més suspeses';
+        $suspeses5omes->backgroundColor = "red";
+    
+        $params['filter'] = '5omes-suspeses';
+        $params['idFP'] = 9;
+    
+        $suspeses5omes->data = $this->StatsService->getFPStats($params);
+
+        $datasets = array($tot_aprobat, $suspeses1o2, $suspeses3o4, $suspeses5omes);
+
         return $this->view->render($response, 'curs2nAGga.html', [
-            'name' => $args['name']
+            'name' => $args['name'],
+           'datasets' => json_encode($datasets)
         ]);
     })->setName('curs2nAGga');
 
     //ADMINISTRACIÓ I FINANCES
     $app->get('/curs1rAGaf', function($request, $response, $args){
+        $tot_aprobat = new \stdClass;
+        $tot_aprobat->label = 'Tot aprobat';
+        $tot_aprobat->backgroundColor = "green";
+    
+        $params['filter'] = 'tot-aprobat';
+        $params['idFP'] = 10;
+    
+        $tot_aprobat->data = $this->StatsService->getFPStats($params);
+    
+        $suspeses1o2 = new \stdClass;
+        $suspeses1o2->label = '1 o 2 suspeses';
+        $suspeses1o2->backgroundColor = "yellow";
+        
+        $params['filter'] = '1o2-suspeses';
+        $params['idFP'] = 10;
+    
+        $suspeses1o2->data = $this->StatsService->getFPStats($params);
+    
+        $suspeses3o4 = new \stdClass;
+        $suspeses3o4->label = '3 o 4 suspeses';
+        $suspeses3o4->backgroundColor = "orange";
+    
+        $params['filter'] = '3o4-suspeses';
+        $params['idFP'] = 10;
+    
+        $suspeses3o4->data = $this->StatsService->getFPStats($params);
+
+        $suspeses5omes = new \stdClass;
+        $suspeses5omes->label = '5 o més suspeses';
+        $suspeses5omes->backgroundColor = "red";
+    
+        $params['filter'] = '5omes-suspeses';
+        $params['idFP'] = 10;
+    
+        $suspeses5omes->data = $this->StatsService->getFPStats($params);
+
+        $datasets = array($tot_aprobat, $suspeses1o2, $suspeses3o4, $suspeses5omes);
+
         return $this->view->render($response, 'curs1rAGaf.html', [
-            'name' => $args['name']
+            'name' => $args['name'],
+           'datasets' => json_encode($datasets)
         ]);
     })->setName('curs1rAGaf');
 
     $app->get('/curs2nAGaf', function($request, $response, $args){
-        return $this->view->render($response,'curs2nAGaf.html', [
-            'name' => $args['name']
+        $tot_aprobat = new \stdClass;
+        $tot_aprobat->label = 'Tot aprobat';
+        $tot_aprobat->backgroundColor = "green";
+    
+        $params['filter'] = 'tot-aprobat';
+        $params['idFP'] = 11;
+    
+        $tot_aprobat->data = $this->StatsService->getFPStats($params);
+    
+        $suspeses1o2 = new \stdClass;
+        $suspeses1o2->label = '1 o 2 suspeses';
+        $suspeses1o2->backgroundColor = "yellow";
+        
+        $params['filter'] = '1o2-suspeses';
+        $params['idFP'] = 11;
+    
+        $suspeses1o2->data = $this->StatsService->getFPStats($params);
+    
+        $suspeses3o4 = new \stdClass;
+        $suspeses3o4->label = '3 o 4 suspeses';
+        $suspeses3o4->backgroundColor = "orange";
+    
+        $params['filter'] = '3o4-suspeses';
+        $params['idFP'] = 11;
+    
+        $suspeses3o4->data = $this->StatsService->getFPStats($params);
+
+        $suspeses5omes = new \stdClass;
+        $suspeses5omes->label = '5 o més suspeses';
+        $suspeses5omes->backgroundColor = "red";
+    
+        $params['filter'] = '5omes-suspeses';
+        $params['idFP'] = 11;
+    
+        $suspeses5omes->data = $this->StatsService->getFPStats($params);
+
+        $datasets = array($tot_aprobat, $suspeses1o2, $suspeses3o4, $suspeses5omes);
+
+        return $this->view->render($response, 'curs2nAGaf.html', [
+            'name' => $args['name'],
+           'datasets' => json_encode($datasets)
         ]);
     })->setName('curs2nAGaf');
 
 //CURS INFORMÀTICA
     //SISTEMES MICROINFORMÀTICS I XARXES
     $app->get('/curs1rsmix', function($request, $response, $args){
+
+        $tot_aprobat = new \stdClass;
+        $tot_aprobat->label = 'Tot aprobat';
+        $tot_aprobat->backgroundColor = "green";
+    
+        $params['filter'] = 'tot-aprobat';
+        $params['idFP'] = 1;
+    
+        $tot_aprobat->data = $this->StatsService->getFPStats($params);
+    
+        $suspeses1o2 = new \stdClass;
+        $suspeses1o2->label = '1 o 2 suspeses';
+        $suspeses1o2->backgroundColor = "yellow";
+        
+        $params['filter'] = '1o2-suspeses';
+        $params['idFP'] = 1;
+    
+        $suspeses1o2->data = $this->StatsService->getFPStats($params);
+    
+        $suspeses3o4 = new \stdClass;
+        $suspeses3o4->label = '3 o 4 suspeses';
+        $suspeses3o4->backgroundColor = "orange";
+    
+        $params['filter'] = '3o4-suspeses';
+        $params['idFP'] = 1;
+    
+        $suspeses3o4->data = $this->StatsService->getFPStats($params);
+
+        $suspeses5omes = new \stdClass;
+        $suspeses5omes->label = '5 o més suspeses';
+        $suspeses5omes->backgroundColor = "red";
+    
+        $params['filter'] = '5omes-suspeses';
+        $params['idFP'] = 1;
+    
+        $suspeses5omes->data = $this->StatsService->getFPStats($params);
+
+        $datasets = array($tot_aprobat, $suspeses1o2, $suspeses3o4, $suspeses5omes);
+
         return $this->view->render($response, 'curs1rsmix.html', [
-            'name' => $args['name']
+            'name' => $args['name'],
+           'datasets' => json_encode($datasets)
         ]);
     })->setName('curs1rsmix');
 
     $app->get('/curs2nsmix', function($request, $response, $args){
+        $tot_aprobat = new \stdClass;
+        $tot_aprobat->label = 'Tot aprobat';
+        $tot_aprobat->backgroundColor = "green";
+    
+        $params['filter'] = 'tot-aprobat';
+        $params['idFP'] = 3;
+    
+        $tot_aprobat->data = $this->StatsService->getFPStats($params);
+    
+        $suspeses1o2 = new \stdClass;
+        $suspeses1o2->label = '1 o 2 suspeses';
+        $suspeses1o2->backgroundColor = "yellow";
+        
+        $params['filter'] = '1o2-suspeses';
+        $params['idFP'] = 3;
+    
+        $suspeses1o2->data = $this->StatsService->getFPStats($params);
+    
+        $suspeses3o4 = new \stdClass;
+        $suspeses3o4->label = '3 o 4 suspeses';
+        $suspeses3o4->backgroundColor = "orange";
+    
+        $params['filter'] = '3o4-suspeses';
+        $params['idFP'] = 3;
+    
+        $suspeses3o4->data = $this->StatsService->getFPStats($params);
+
+        $suspeses5omes = new \stdClass;
+        $suspeses5omes->label = '5 o més suspeses';
+        $suspeses5omes->backgroundColor = "red";
+    
+        $params['filter'] = '5omes-suspeses';
+        $params['idFP'] = 3;
+    
+        $suspeses5omes->data = $this->StatsService->getFPStats($params);
+
+        $datasets = array($tot_aprobat, $suspeses1o2, $suspeses3o4, $suspeses5omes);
+
         return $this->view->render($response, 'curs2nsmix.html', [
-            'name' => $args['name']
+            'name' => $args['name'],
+           'datasets' => json_encode($datasets)
         ]);
     })->setName('curs2nsmix');
 
     //ADMINISTRACIÓ DE SISTEMES INFORMÀTICS EN XARXES
     $app->get('/curs1rasix', function($request, $response, $args){
+        $tot_aprobat = new \stdClass;
+        $tot_aprobat->label = 'Tot aprobat';
+        $tot_aprobat->backgroundColor = "green";
+    
+        $params['filter'] = 'tot-aprobat';
+        $params['idFP'] = 4;
+    
+        $tot_aprobat->data = $this->StatsService->getFPStats($params);
+    
+        $suspeses1o2 = new \stdClass;
+        $suspeses1o2->label = '1 o 2 suspeses';
+        $suspeses1o2->backgroundColor = "yellow";
+        
+        $params['filter'] = '1o2-suspeses';
+        $params['idFP'] = 4;
+    
+        $suspeses1o2->data = $this->StatsService->getFPStats($params);
+    
+        $suspeses3o4 = new \stdClass;
+        $suspeses3o4->label = '3 o 4 suspeses';
+        $suspeses3o4->backgroundColor = "orange";
+    
+        $params['filter'] = '3o4-suspeses';
+        $params['idFP'] = 4;
+    
+        $suspeses3o4->data = $this->StatsService->getFPStats($params);
+
+        $suspeses5omes = new \stdClass;
+        $suspeses5omes->label = '5 o més suspeses';
+        $suspeses5omes->backgroundColor = "red";
+    
+        $params['filter'] = '5omes-suspeses';
+        $params['idFP'] = 4;
+    
+        $suspeses5omes->data = $this->StatsService->getFPStats($params);
+
+        $datasets = array($tot_aprobat, $suspeses1o2, $suspeses3o4, $suspeses5omes);
+
         return $this->view->render($response, 'curs1rasix.html', [
-            'name' => $args['name']
+            'name' => $args['name'],
+           'datasets' => json_encode($datasets)
         ]);
     })->setName('curs1rasix');
 
     $app->get('/curs2nasix', function($request, $response, $args){
+        $tot_aprobat = new \stdClass;
+        $tot_aprobat->label = 'Tot aprobat';
+        $tot_aprobat->backgroundColor = "green";
+    
+        $params['filter'] = 'tot-aprobat';
+        $params['idFP'] = 5;
+    
+        $tot_aprobat->data = $this->StatsService->getFPStats($params);
+    
+        $suspeses1o2 = new \stdClass;
+        $suspeses1o2->label = '1 o 2 suspeses';
+        $suspeses1o2->backgroundColor = "yellow";
+        
+        $params['filter'] = '1o2-suspeses';
+        $params['idFP'] = 5;
+    
+        $suspeses1o2->data = $this->StatsService->getFPStats($params);
+    
+        $suspeses3o4 = new \stdClass;
+        $suspeses3o4->label = '3 o 4 suspeses';
+        $suspeses3o4->backgroundColor = "orange";
+    
+        $params['filter'] = '3o4-suspeses';
+        $params['idFP'] = 5;
+    
+        $suspeses3o4->data = $this->StatsService->getFPStats($params);
+
+        $suspeses5omes = new \stdClass;
+        $suspeses5omes->label = '5 o més suspeses';
+        $suspeses5omes->backgroundColor = "red";
+    
+        $params['filter'] = '5omes-suspeses';
+        $params['idFP'] = 5;
+    
+        $suspeses5omes->data = $this->StatsService->getFPStats($params);
+
+        $datasets = array($tot_aprobat, $suspeses1o2, $suspeses3o4, $suspeses5omes);
+
         return $this->view->render($response, 'curs2nasix.html', [
-            'name' => $args['name']
+            'name' => $args['name'],
+           'datasets' => json_encode($datasets)
         ]);
     })->setName('curs2nasix');
 
     //DESENVOLUPAMENT D'APLICACIONS MULTIPLATAFORMA
     $app->get('/curs1rdam', function($request, $response, $args){
+        $tot_aprobat = new \stdClass;
+        $tot_aprobat->label = 'Tot aprobat';
+        $tot_aprobat->backgroundColor = "green";
+    
+        $params['filter'] = 'tot-aprobat';
+        $params['idFP'] = 6;
+    
+        $tot_aprobat->data = $this->StatsService->getFPStats($params);
+    
+        $suspeses1o2 = new \stdClass;
+        $suspeses1o2->label = '1 o 2 suspeses';
+        $suspeses1o2->backgroundColor = "yellow";
+        
+        $params['filter'] = '1o2-suspeses';
+        $params['idFP'] = 6;
+    
+        $suspeses1o2->data = $this->StatsService->getFPStats($params);
+    
+        $suspeses3o4 = new \stdClass;
+        $suspeses3o4->label = '3 o 4 suspeses';
+        $suspeses3o4->backgroundColor = "orange";
+    
+        $params['filter'] = '3o4-suspeses';
+        $params['idFP'] = 6;
+    
+        $suspeses3o4->data = $this->StatsService->getFPStats($params);
+
+        $suspeses5omes = new \stdClass;
+        $suspeses5omes->label = '5 o més suspeses';
+        $suspeses5omes->backgroundColor = "red";
+    
+        $params['filter'] = '5omes-suspeses';
+        $params['idFP'] = 6;
+    
+        $suspeses5omes->data = $this->StatsService->getFPStats($params);
+
+        $datasets = array($tot_aprobat, $suspeses1o2, $suspeses3o4, $suspeses5omes);
+
         return $this->view->render($response, 'curs1rdam.html', [
-            'name' => $args['name']
+            'name' => $args['name'],
+           'datasets' => json_encode($datasets)
         ]);
     })->setName('curs1rdam');
 
     $app->get('/curs2ndam', function($request, $response, $args){
+        $tot_aprobat = new \stdClass;
+        $tot_aprobat->label = 'Tot aprobat';
+        $tot_aprobat->backgroundColor = "green";
+    
+        $params['filter'] = 'tot-aprobat';
+        $params['idFP'] = 7;
+    
+        $tot_aprobat->data = $this->StatsService->getFPStats($params);
+    
+        $suspeses1o2 = new \stdClass;
+        $suspeses1o2->label = '1 o 2 suspeses';
+        $suspeses1o2->backgroundColor = "yellow";
+        
+        $params['filter'] = '1o2-suspeses';
+        $params['idFP'] = 7;
+    
+        $suspeses1o2->data = $this->StatsService->getFPStats($params);
+    
+        $suspeses3o4 = new \stdClass;
+        $suspeses3o4->label = '3 o 4 suspeses';
+        $suspeses3o4->backgroundColor = "orange";
+    
+        $params['filter'] = '3o4-suspeses';
+        $params['idFP'] = 7;
+    
+        $suspeses3o4->data = $this->StatsService->getFPStats($params);
+
+        $suspeses5omes = new \stdClass;
+        $suspeses5omes->label = '5 o més suspeses';
+        $suspeses5omes->backgroundColor = "red";
+    
+        $params['filter'] = '5omes-suspeses';
+        $params['idFP'] = 7;
+    
+        $suspeses5omes->data = $this->StatsService->getFPStats($params);
+
+        $datasets = array($tot_aprobat, $suspeses1o2, $suspeses3o4, $suspeses5omes);
+
         return $this->view->render($response, 'curs2ndam.html', [
-            'name' => $args['name']
+            'name' => $args['name'],
+           'datasets' => json_encode($datasets)
         ]);
     })->setName('curs2ndam');
 
@@ -263,7 +743,11 @@ $app->get('/curscasHumsis', function($request, $response, $args){
 
 
 
-// Define named route
+
+
+ 
+
+//Define named route
 $app->get('/teachers', function ($request, $response, $args) {
     return $this->view->render($response, 'teachers.html', [
         'name' => $args['name']

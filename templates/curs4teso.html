@@ -428,4 +428,71 @@
 </div>
 <!--End list activities -->
 
+
+<script type="text/javascript">
+    var mydatasets = '{{ datasets }}';
+  </script>
+
+<script>
+
+window.onload = function() {
+    var encodedStr = '{{ datasets }}';
+    var parser = new DOMParser;
+    var dom = parser.parseFromString(
+        '<!doctype html><body>' + encodedStr,
+        'text/html');
+    var decodedString = dom.body.textContent;
+
+    console.log(JSON.parse(decodedString));
+
+
+
+
+    var barChartData = {
+        labels: ["4t A", "4t B", "4t C", "4t D"],
+        datasets: JSON.parse(decodedString)
+    };
+
+
+
+
+
+    var ctx = document.getElementById("canvas").getContext("2d");
+    window.myBar = new Chart(ctx, {
+        type: 'bar',
+        data: barChartData,
+        options: {
+            title:{
+                display:true,
+                text:"Informació 4t E.S.O."
+            },
+            tooltips: {
+                mode: 'index',
+                intersect: false
+            },
+            responsive: true,
+            scales: {
+                xAxes: [{
+                    stacked: true,
+                }],
+                yAxes: [{
+                    stacked: true
+                }]
+            }
+        }
+    });
+};
+
+/*
+document.getElementById('randomizeData').addEventListener('click', function() {
+    barChartData.datasets.forEach(function(dataset, i) {
+        dataset.data = dataset.data.map(function() {
+            return randomScalingFactor();
+        });
+    });
+    window.myBar.update();
+});*/
+
+</script>
+
 {% endblock %}

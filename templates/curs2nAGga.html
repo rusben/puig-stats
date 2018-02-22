@@ -217,20 +217,8 @@
 
 
 <!--Chart & buttons -->
-<div class="container">
-    <div style="width:75%;">
-        <canvas id="canvas"></canvas>
-    </div>
-    <br>
-    <button id="randomizeData">Randomize Data</button>
-    <button id="addDataset">Add Dataset</button>
-    <button id="removeDataset">Remove Dataset</button>
-    <button id="addData">Add Data</button>
-    <button id="removeData">Remove Data</button>
-    <br />
-    <br />    
-    <br />
-    <br />
+<div style="width: 75%">
+    <canvas id="canvas"></canvas>
 </div>
 <!--End chart & buttons -->
 
@@ -313,5 +301,69 @@
     </table>
 </div>
 <!--End list activities -->
+<script type="text/javascript">
+    var mydatasets = '{{ datasets }}';
+  </script>
 
+<script>
+    
+    window.onload = function() {
+        var encodedStr = '{{ datasets }}';
+        var parser = new DOMParser;
+        var dom = parser.parseFromString(
+            '<!doctype html><body>' + encodedStr,
+            'text/html');
+        var decodedString = dom.body.textContent;
+    
+        console.log(JSON.parse(decodedString));
+    
+    
+    
+    
+        var barChartData = {
+            labels: ["2n A", "2n B", "2n C", "2n D"],
+            datasets: JSON.parse(decodedString)
+        };
+    
+    
+    
+    
+    
+        var ctx = document.getElementById("canvas").getContext("2d");
+        window.myBar = new Chart(ctx, {
+            type: 'bar',
+            data: barChartData,
+            options: {
+                title:{
+                    display:true,
+                    text:"Informació 2n Gestió administrativa"
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: false
+                },
+                responsive: true,
+                scales: {
+                    xAxes: [{
+                        stacked: true,
+                    }],
+                    yAxes: [{
+                        stacked: true
+                    }]
+                }
+            }
+        });
+    };
+    
+    /*
+    document.getElementById('randomizeData').addEventListener('click', function() {
+        barChartData.datasets.forEach(function(dataset, i) {
+            dataset.data = dataset.data.map(function() {
+                return randomScalingFactor();
+            });
+        });
+        window.myBar.update();
+    });*/
+    
+    </script>
 {% endblock %}
