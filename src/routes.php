@@ -242,28 +242,184 @@ $app->get('/curs2nbatArts', function ($request, $response, $args) {
 
 // CURS BATXILLERAT HUMANISTIC I CIENCIES SOCIALS
 $app->get('/curs1rbatHumsis', function ($request, $response, $args) {
+    $tot_aprobat = new \stdClass;
+    $tot_aprobat->label = 'Tot aprobat';
+    $tot_aprobat->backgroundColor = "green";
+
+    $params['filter'] = 'tot-aprobat';
+    $params['idBat'] = 1;
+
+    $tot_aprobat->data = $this->StatsService->getBATStats($params);
+
+    $suspeses1o2 = new \stdClass;
+    $suspeses1o2->label = '1 o 2 suspeses';
+    $suspeses1o2->backgroundColor = "yellow";
+    
+    $params['filter'] = '1o2-suspeses';
+    $params['idBat'] = 1;
+
+    $suspeses1o2->data = $this->StatsService->getBATStats($params);
+
+    $suspeses3o4 = new \stdClass;
+    $suspeses3o4->label = '3 o 4 suspeses';
+    $suspeses3o4->backgroundColor = "orange";
+
+    $params['filter'] = '3o4-suspeses';
+    $params['idBat'] = 1;
+
+    $suspeses3o4->data = $this->StatsService->getBATStats($params);
+
+    $suspeses5omes = new \stdClass;
+    $suspeses5omes->label = '5 o més suspeses';
+    $suspeses5omes->backgroundColor = "red";
+
+    $params['filter'] = '5omes-suspeses';
+    $params['idBat'] = 1;
+
+    $suspeses5omes->data = $this->StatsService->getBATStats($params);
+
+    $datasets = array($tot_aprobat, $suspeses1o2, $suspeses3o4, $suspeses5omes);
+
     return $this->view->render($response, 'curs1rbatHumsis.html', [
-        'name' => $args['name']
+        'name' => $args['name'],
+       'datasets' => json_encode($datasets)
     ]);
 })->setName('curs1rbatHumsis');
 
 
 $app->get('/curs2nbatHumsis', function ($request, $response, $args) {
+    $tot_aprobat = new \stdClass;
+    $tot_aprobat->label = 'Tot aprobat';
+    $tot_aprobat->backgroundColor = "green";
+
+    $params['filter'] = 'tot-aprobat';
+    $params['idBat'] = 2;
+
+    $tot_aprobat->data = $this->StatsService->getBATStats($params);
+
+    $suspeses1o2 = new \stdClass;
+    $suspeses1o2->label = '1 o 2 suspeses';
+    $suspeses1o2->backgroundColor = "yellow";
+    
+    $params['filter'] = '1o2-suspeses';
+    $params['idBat'] = 2;
+
+    $suspeses1o2->data = $this->StatsService->getBATStats($params);
+
+    $suspeses3o4 = new \stdClass;
+    $suspeses3o4->label = '3 o 4 suspeses';
+    $suspeses3o4->backgroundColor = "orange";
+
+    $params['filter'] = '3o4-suspeses';
+    $params['idBat'] = 2;
+
+    $suspeses3o4->data = $this->StatsService->getBATStats($params);
+
+    $suspeses5omes = new \stdClass;
+    $suspeses5omes->label = '5 o més suspeses';
+    $suspeses5omes->backgroundColor = "red";
+
+    $params['filter'] = '5omes-suspeses';
+    $params['idBat'] = 2;
+
+    $suspeses5omes->data = $this->StatsService->getBATStats($params);
+
+    $datasets = array($tot_aprobat, $suspeses1o2, $suspeses3o4, $suspeses5omes);
+
     return $this->view->render($response, 'curs2nbatHumsis.html', [
-        'name' => $args['name']
+        'name' => $args['name'],
+       'datasets' => json_encode($datasets)
     ]);
 })->setName('curs2nbatHumsis');
 
 //CURS BATXILLERAT CIENCIES I TECNOLOGIA
 $app->get('/curs1rbatCientec', function ($request, $response, $args){
+    $tot_aprobat = new \stdClass;
+    $tot_aprobat->label = 'Tot aprobat';
+    $tot_aprobat->backgroundColor = "green";
+
+    $params['filter'] = 'tot-aprobat';
+    $params['idBat'] = 3;
+
+    $tot_aprobat->data = $this->StatsService->getBATStats($params);
+
+    $suspeses1o2 = new \stdClass;
+    $suspeses1o2->label = '1 o 2 suspeses';
+    $suspeses1o2->backgroundColor = "yellow";
+    
+    $params['filter'] = '1o2-suspeses';
+    $params['idBat'] = 3;
+
+    $suspeses1o2->data = $this->StatsService->getBATStats($params);
+
+    $suspeses3o4 = new \stdClass;
+    $suspeses3o4->label = '3 o 4 suspeses';
+    $suspeses3o4->backgroundColor = "orange";
+
+    $params['filter'] = '3o4-suspeses';
+    $params['idBat'] = 3;
+
+    $suspeses3o4->data = $this->StatsService->getBATStats($params);
+
+    $suspeses5omes = new \stdClass;
+    $suspeses5omes->label = '5 o més suspeses';
+    $suspeses5omes->backgroundColor = "red";
+
+    $params['filter'] = '5omes-suspeses';
+    $params['idBat'] = 3;
+
+    $suspeses5omes->data = $this->StatsService->getBATStats($params);
+
+    $datasets = array($tot_aprobat, $suspeses1o2, $suspeses3o4, $suspeses5omes);
+
     return $this->view->render($response, 'curs1rbatCientec.html', [
-        'name' => $args['name']
+        'name' => $args['name'],
+       'datasets' => json_encode($datasets)
     ]);
 })->setName('curs1rbatCientec');
 
 $app->get('/curs2nbatCientec', function($request, $response, $args){
+    $tot_aprobat = new \stdClass;
+    $tot_aprobat->label = 'Tot aprobat';
+    $tot_aprobat->backgroundColor = "green";
+
+    $params['filter'] = 'tot-aprobat';
+    $params['idBat'] = 4;
+
+    $tot_aprobat->data = $this->StatsService->getBATStats($params);
+
+    $suspeses1o2 = new \stdClass;
+    $suspeses1o2->label = '1 o 2 suspeses';
+    $suspeses1o2->backgroundColor = "yellow";
+    
+    $params['filter'] = '1o2-suspeses';
+    $params['idBat'] = 4;
+
+    $suspeses1o2->data = $this->StatsService->getBATStats($params);
+
+    $suspeses3o4 = new \stdClass;
+    $suspeses3o4->label = '3 o 4 suspeses';
+    $suspeses3o4->backgroundColor = "orange";
+
+    $params['filter'] = '3o4-suspeses';
+    $params['idBat'] = 4;
+
+    $suspeses3o4->data = $this->StatsService->getBATStats($params);
+
+    $suspeses5omes = new \stdClass;
+    $suspeses5omes->label = '5 o més suspeses';
+    $suspeses5omes->backgroundColor = "red";
+
+    $params['filter'] = '5omes-suspeses';
+    $params['idBat'] = 4;
+
+    $suspeses5omes->data = $this->StatsService->getBATStats($params);
+
+    $datasets = array($tot_aprobat, $suspeses1o2, $suspeses3o4, $suspeses5omes);
+
     return $this->view->render($response, 'curs2nbatCientec.html', [
-        'name' => $args['name']
+        'name' => $args['name'],
+       'datasets' => json_encode($datasets)
     ]);
 })->setName('curs2nbatCientec');
 

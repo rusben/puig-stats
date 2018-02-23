@@ -49,7 +49,7 @@ class StatsService {
         
                 return $result;
         
-            }
+    }
 
 
     function getESOGroupStats($params){
@@ -135,6 +135,69 @@ class StatsService {
             return $error;
         }
     }
-}
 
+    function getBATStats($params){
+        
+                $result = [];
+                
+                $params['group_name'] = 'A';
+                $result[] = $this->getBATGroupStats($params);
+        
+                $params['group_name'] = 'B';
+                $result[] = $this->getBATGroupStats($params);
+        
+                $params['group_name'] = 'C';
+                $result[] = $this->getBATGroupStats($params);
+        
+                $params['group_name'] = 'D';
+                $result[] = $this->getBATGroupStats($params);
+        
+                return $result;
+        
+    }
+
+
+    function getBATGroupStats($params){
+        
+    
+            if ($params['filter'] == 'tot-aprobat') {
+                $sql = "select count(distinct `SubjectBat_EnrollmentBat`.`idEnrollment`) AS `total` from `SubjectBat_EnrollmentBat` where ((not(`SubjectBat_EnrollmentBat`.`idEnrollment` in (select distinct `SubjectBat_EnrollmentBat`.`idEnrollment` from `SubjectBat_EnrollmentBat` where ((`SubjectBat_EnrollmentBat`.`value` < :value) and (`SubjectBat_EnrollmentBat`.`idBat` like :idBat) and (`SubjectBat_EnrollmentBat`.`group_name` like :group_name))))) and (`SubjectBat_EnrollmentBat`.`idBat` like :idBat) and (`SubjectBat_EnrollmentBat`.`group_name` like :group_name))";
+                $value = 5;
+            }
+    
+            if ($params['filter'] == '1o2-suspeses') {
+                $sql = "select count(*) AS `total` from (select `project.local`.`SubjectBat_EnrollmentBat`.`idEnrollment` AS `idEnrollment`,count(`project.local`.`SubjectBat_EnrollmentBat`.`value`) AS `suspendidas` from `project.local`.`SubjectBat_EnrollmentBat` where ((`project.local`.`SubjectBat_EnrollmentBat`.`value` < :value) and (`project.local`.`SubjectBat_EnrollmentBat`.`idBat` like :idBat) and (`project.local`.`SubjectBat_EnrollmentBat`.`group_name` like :group_name)) group by `project.local`.`SubjectBat_EnrollmentBat`.`idEnrollment` having (`suspendidas` < 3)) `T1`";
+                $value = 5;
+            }
+            if ($params['filter'] == '3o4-suspeses') {
+                $sql = "select count(*) AS `total` from (select `project.local`.`SubjectBat_EnrollmentBat`.`idEnrollment` AS `idEnrollment`,count(`project.local`.`SubjectBat_EnrollmentBat`.`value`) AS `suspendidas` from `project.local`.`SubjectBat_EnrollmentBat` where ((`project.local`.`SubjectBat_EnrollmentBat`.`value` < :value) and (`project.local`.`SubjectBat_EnrollmentBat`.`idBat` like :idBat) and (`project.local`.`SubjectBat_EnrollmentBat`.`group_name` like :group_name)) group by `project.local`.`SubjectBat_EnrollmentBat`.`idEnrollment` having ((`suspendidas` > 2) and (`suspendidas` < 5))) `T1`";
+                $value = 5;
+            }
+            if ($params['filter'] == '5omes-suspeses') {
+                $sql = "select count(*) AS `total` from (select `project.local`.`SubjectBat_EnrollmentBat`.`idEnrollment` AS `idEnrollment`,count(`project.local`.`SubjectBat_EnrollmentBat`.`value`) AS `suspendidas` from `project.local`.`SubjectBat_EnrollmentBat` where ((`project.local`.`SubjectBat_EnrollmentBat`.`value` < :value) and (`project.local`.`SubjectBat_EnrollmentBat`.`idBat` like :idBat) and (`project.local`.`SubjectBat_EnrollmentBat`.`group_name` like :group_name)) group by `project.local`.`SubjectBat_EnrollmentBat`.`idEnrollment` having (`suspendidas` >= 5)) `T1`";
+                $value = 5;
+            }
+        
+            $idBat = $params['idBat'];
+            $group_name = $params['group_name'];
+    
+    
+            try{
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindParam("value", $value);
+                $stmt->bindParam("idBat", $idBat);
+                $stmt->bindParam("group_name", $group_name);
+    
+                $stmt->execute();
+                $result = $stmt->fetchObject();
+    
+                return $result->total;
+    
+            }catch(PDOException $e){
+                $error = array("error" => array("text" => $e->getMessage()));
+                return $error;
+            }
+    } 
+
+}
 ?>
