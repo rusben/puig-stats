@@ -13,6 +13,7 @@ $app->get('/profile_page', function ($request, $response, $args) {
 })->setName('profile_page');
 
 // CURS ESO 
+//ESO 1
     $app->get('/curs1reso', function ($request, $response, $args) {
 
     $tot_aprobat = new \stdClass;
@@ -33,7 +34,6 @@ $app->get('/profile_page', function ($request, $response, $args) {
     $params['idESO'] = 1;
 
     $suspeses1o2->data = $this->StatsService->getESOStats($params);
-    
 
     $suspeses3o4 = new \stdClass;
     $suspeses3o4->label = '3 o 4 suspeses';
@@ -44,8 +44,6 @@ $app->get('/profile_page', function ($request, $response, $args) {
 
     $suspeses3o4->data = $this->StatsService->getESOStats($params);
 
-
-
     $suspeses5omes = new \stdClass;
     $suspeses5omes->label = '5 o més suspeses';
     $suspeses5omes->backgroundColor = "red";
@@ -55,17 +53,25 @@ $app->get('/profile_page', function ($request, $response, $args) {
 
     $suspeses5omes->data = $this->StatsService->getESOStats($params);
 
-   
 
     $datasets = array($tot_aprobat, $suspeses1o2, $suspeses3o4, $suspeses5omes);
+
+ print_r("<pre>");
+  print_r($datasets);
+  print_r($tot_aprobat + $suspeses1o2 + $suspeses3o4 + $suspeses5omes);
+   print_r("</pre>");
+  die("---"); 
 
     
     return $this->view->render($response, 'curs1reso.html', [
         'name' => $args['name'],
-       'datasets' => json_encode($datasets)
+        'nstudents' => $tot_aprobat + $suspeses1o2 + $suspeses3o4 + $suspeses5omes,
+       'datasets' => json_encode($datasets),
+       'datasetes' => $datasets
     ]);
     })->setName('curs1reso');
 
+//ESO 2
 
     $app->get('/curs2neso', function ($request, $response, $args) {
 
@@ -120,6 +126,7 @@ $app->get('/profile_page', function ($request, $response, $args) {
     ]);
     })->setName('curs2neso');
 
+//ESO 3
 
     $app->get('/curs3reso', function ($request, $response, $args) {
     $tot_aprobat = new \stdClass;
@@ -173,6 +180,7 @@ $app->get('/profile_page', function ($request, $response, $args) {
     ]);
     })->setName('curs3reso');
 
+//ESO 4
 
     $app->get('/curs4teso', function ($request, $response, $args) {
     $tot_aprobat = new \stdClass;
@@ -225,6 +233,9 @@ $app->get('/profile_page', function ($request, $response, $args) {
        'datasets' => json_encode($datasets)
     ]);
     })->setName('curs4teso');
+
+
+
 
 // CURS BATXILLERAT ARTISTIC
 $app->get('/curs1rbatArts', function ($request, $response, $args) {
@@ -425,8 +436,47 @@ $app->get('/curs2nbatCientec', function($request, $response, $args){
 
 //CURS CAS CIENTIFICOTECNOLOGIC
 $app->get('/curscasCientec', function($request, $response, $args){
+    $tot_aprobat = new \stdClass;
+    $tot_aprobat->label = 'Tot aprobat';
+    $tot_aprobat->backgroundColor = "green";
+
+    $params['filter'] = 'tot-aprobat';
+    $params['idCAS'] = 1;
+
+    $tot_aprobat->data = $this->StatsService->getCASStats($params);
+
+    $suspeses1o2 = new \stdClass;
+    $suspeses1o2->label = '1 o 2 suspeses';
+    $suspeses1o2->backgroundColor = "yellow";
+    
+    $params['filter'] = '1o2-suspeses';
+    $params['idCAS'] = 1;
+
+    $suspeses1o2->data = $this->StatsService->getCASStats($params);
+
+    $suspeses3o4 = new \stdClass;
+    $suspeses3o4->label = '3 o 4 suspeses';
+    $suspeses3o4->backgroundColor = "orange";
+
+    $params['filter'] = '3o4-suspeses';
+    $params['idCAS'] = 1;
+
+    $suspeses3o4->data = $this->StatsService->getCASStats($params);
+
+    $suspeses5omes = new \stdClass;
+    $suspeses5omes->label = '5 o més suspeses';
+    $suspeses5omes->backgroundColor = "red";
+
+    $params['filter'] = '5omes-suspeses';
+    $params['idCAS'] = 1;
+
+    $suspeses5omes->data = $this->StatsService->getCASStats($params);
+
+    $datasets = array($tot_aprobat, $suspeses1o2, $suspeses3o4, $suspeses5omes);
+
     return $this->view->render($response, 'curscasCientec.html', [
-        'name' => $args['name']
+        'name' => $args['name'],
+       'datasets' => json_encode($datasets)
     ]);
 })->setName('curscasCientec');
 

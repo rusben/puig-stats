@@ -18,8 +18,18 @@
         </nav>
     </div>    
 </div>
-<!-- TAULA PRIMER TRIMESTRE ESO-->
-<h2>Dades Primer Trimestre:</h2>
+<!-- TAULA PRIMER ESO-->
+<h2>Dades Primer:</h2>
+
+
+
+
+
+
+
+
+
+
 <table class="table table-bordered" id="taula-cursos">
     <thead class="thead-inverse">
         <tr>
@@ -32,48 +42,60 @@
             <th>    </th>
             <th>1r D</th>
             <th>    </th>
-            <th>1r E</th>
-            <th>    </th>
-            <th>1r F</th>
-            <th>    </th>
             <th>TOTAL 1r</th>
             <th>    </th>
         </tr>
-        <tr>
-            <th>    </th>
-            <th> 12 </th>
-            <th> % </th>
-            <th> 28 </th>
-            <th> % </th>
-            <th> 27 </th>
-            <th> % </th>
-            <th> 27 </th>
-            <th> % </th>
-            <th> 27 </th>
-            <th> % </th>
-            <th> 28 </th>
-            <th> % </th>
-            <th> 149 </th>
-            <th> % </th>
-        </tr>
+
+        
+       
     </thead>
     <tbody>
-        <tr>
-            <td>Tot aprobat </td>
-            <td> 4 </td>
+
+            {% for dataset in datasetes %}
+        
+            <tr>
+            
+                {% for data in dataset.data %}
+                
+                    {{data}}
+                    
+                    
+                    <td>
+                    {% if loop.index == 0 %}
+                        Tot aprobat
+                    {% endif %}
+                    {% if loop.index == 1 %}
+                        1 o 2 suspeses
+                    {% endif %}
+                    {% if loop.index == 2 %}
+                        3 o 4 suspeses
+                    {% endif %}
+                    {% if loop.index == 3 %}
+                        5 o més suspeses
+                    {% endif %}
+                    </td>
+                    
+                    <td> {{data}} </td>
+                    -- {{nstudents}} --
+                    <td> {{(data / nstudents) * 100}}% </td>
+                
+                {% endfor %}
+
+            </tr>
+            
+            {% endfor %}
+
+        <!--
+            
             <td> 33.33% </td>
-            <td> 12 </td>
+            <td> 0 </td>
             <td> 42.86% </td>
-            <td> 9 </td>
+            <td> 0 </td>
             <td> 33.33% </td>
             <td> 6 </td>
             <td> 22.22% </td>
-            <td> 11 </td>
+            <td> 1 </td>
             <td> 40.74% </td>
-            <td> 11 </td>
-            <td> 39.29% </td>
-            <td> 53 </td>
-            <td> 35.6%</td>
         </tr>
         <tr>
             <td>1 o 2 suspeses </td>
@@ -87,10 +109,6 @@
             <td> 25.93% </td>
             <td> 10 </td>
             <td> 37.04% </td>
-            <td> 6 </td>
-            <td> 21.43% </td>
-            <td> 39 </td>
-            <td> 26.2%</td>
         </tr>
         <tr>
             <td>3 o 4 suspeses </td>
@@ -104,10 +122,6 @@
             <td> 18.52% </td>
             <td> 3 </td>
             <td> 11.11% </td>
-            <td> 3 </td>
-            <td> 10.71% </td>
-            <td> 22 </td>
-            <td> 14.8%</td>
         </tr>
         <tr>
             <td>5 o més suspeses </td>
@@ -121,267 +135,17 @@
             <td> 33.33% </td>
             <td> 3 </td>
             <td> 11.11% </td>
-            <td> 8 </td>
-            <td> 28.57% </td>
-            <td> 35 </td>
-            <td> 23.5%</td>
-        </tr>
+        </tr> -->
     </tbody>
 </table>
 <hr class="my-4">
-<!-- FI TAULA PRIMER TRIMESTRE ESO -->
-
-<!-- TAULA SEGON TRIMESTRE ESO-->
-<h2>Dades Segon Trimestre:</h2>
-<table class="table table-bordered" id="taula-cursos">
-    <thead>
-        <tr>
-            <th>    </th>
-            <th>1r A</th>
-            <th>    </th>
-            <th>1r B</th>
-            <th>    </th>
-            <th>1r C</th>
-            <th>    </th>
-            <th>1r D</th>
-            <th>    </th>
-            <th>1r E</th>
-            <th>    </th>
-            <th>1r F</th>
-            <th>    </th>
-            <th>TOTAL 1r</th>
-            <th>    </th>
-        </tr>
-        <tr>
-            <th>    </th>
-            <th> 12 </th>
-            <th> % </th>
-            <th> 28 </th>
-            <th> % </th>
-            <th> 27 </th>
-            <th> % </th>
-            <th> 27 </th>
-            <th> % </th>
-            <th> 27 </th>
-            <th> % </th>
-            <th> 28 </th>
-            <th> % </th>
-            <th> 149 </th>
-            <th> % </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Tot aprobat </td>
-            <td> 4 </td>
-            <td> 33.33% </td>
-            <td> 12 </td>
-            <td> 42.86% </td>
-            <td> 9 </td>
-            <td> 33.33% </td>
-            <td> 6 </td>
-            <td> 22.22% </td>
-            <td> 11 </td>
-            <td> 40.74% </td>
-            <td> 11 </td>
-            <td> 39.29% </td>
-            <td> 53 </td>
-            <td> 35.6%</td>
-        </tr>
-        <tr>
-            <td>1 o 2 suspeses </td>
-            <td> 3 </td>
-            <td> 25.00% </td>
-            <td> 4 </td>
-            <td> 14.29% </td>
-            <td> 9 </td>
-            <td> 33.33% </td>
-            <td> 7 </td>
-            <td> 25.93% </td>
-            <td> 10 </td>
-            <td> 37.04% </td>
-            <td> 6 </td>
-            <td> 21.43% </td>
-            <td> 39 </td>
-            <td> 26.2%</td>
-        </tr>
-        <tr>
-            <td>3 o 4 suspeses </td>
-            <td> 2 </td>
-            <td> 16.67% </td>
-            <td> 5 </td>
-            <td> 17.86% </td>
-            <td> 4 </td>
-            <td> 14.81% </td>
-            <td> 5 </td>
-            <td> 18.52% </td>
-            <td> 3 </td>
-            <td> 11.11% </td>
-            <td> 3 </td>
-            <td> 10.71% </td>
-            <td> 22 </td>
-            <td> 14.8%</td>
-        </tr>
-        <tr>
-            <td>5 o més suspeses </td>
-            <td> 3 </td>
-            <td> 25.00% </td>
-            <td> 7 </td>
-            <td> 25.00% </td>
-            <td> 5 </td>
-            <td> 18.52% </td>
-            <td> 9 </td>
-            <td> 33.33% </td>
-            <td> 3 </td>
-            <td> 11.11% </td>
-            <td> 8 </td>
-            <td> 28.57% </td>
-            <td> 35 </td>
-            <td> 23.5%</td>
-        </tr>
-    </tbody>
-</table>
-<hr class="my-4">    
-<!-- FI TAULA SEGON TRIMESTRE ESO -->
-
-<!-- TAULA TERCER TRIMESTRE ESO-->
-<h2>Dades Tercer Trimestre:</h2>
-<table class="table table-bordered" id="taula-cursos">
-    <thead>
-        <tr>
-            <th>    </th>
-            <th>1r A</th>
-            <th>    </th>
-            <th>1r B</th>
-            <th>    </th>
-            <th>1r C</th>
-            <th>    </th>
-            <th>1r D</th>
-            <th>    </th>
-            <th>1r E</th>
-            <th>    </th>
-            <th>1r F</th>
-            <th>    </th>
-            <th>TOTAL 1r</th>
-            <th>    </th>
-        </tr>
-        <tr>
-            <th>    </th>
-            <th> 12 </th>
-            <th> % </th>
-            <th> 28 </th>
-            <th> % </th>
-            <th> 27 </th>
-            <th> % </th>
-            <th> 27 </th>
-            <th> % </th>
-            <th> 27 </th>
-            <th> % </th>
-            <th> 28 </th>
-            <th> % </th>
-            <th> 149 </th>
-            <th> % </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Tot aprobat </td>
-            <td> 4 </td>
-            <td> 33.33% </td>
-            <td> 12 </td>
-            <td> 42.86% </td>
-            <td> 9 </td>
-            <td> 33.33% </td>
-            <td> 6 </td>
-            <td> 22.22% </td>
-            <td> 11 </td>
-            <td> 40.74% </td>
-            <td> 11 </td>
-            <td> 39.29% </td>
-            <td> 53 </td>
-            <td> 35.6%</td>
-        </tr>
-        <tr>
-            <td>1 o 2 suspeses </td>
-            <td> 3 </td>
-            <td> 25.00% </td>
-            <td> 4 </td>
-            <td> 14.29% </td>
-            <td> 9 </td>
-            <td> 33.33% </td>
-            <td> 7 </td>
-            <td> 25.93% </td>
-            <td> 10 </td>
-            <td> 37.04% </td>
-            <td> 6 </td>
-            <td> 21.43% </td>
-            <td> 39 </td>
-            <td> 26.2%</td>
-        </tr>
-        <tr>
-            <td>3 o 4 suspeses </td>
-            <td> 2 </td>
-            <td> 16.67% </td>
-            <td> 5 </td>
-            <td> 17.86% </td>
-            <td> 4 </td>
-            <td> 14.81% </td>
-            <td> 5 </td>
-            <td> 18.52% </td>
-            <td> 3 </td>
-            <td> 11.11% </td>
-            <td> 3 </td>
-            <td> 10.71% </td>
-            <td> 22 </td>
-            <td> 14.8%</td>
-        </tr>
-        <tr>
-            <td>5 o més suspeses </td>
-            <td> 3 </td>
-            <td> 25.00% </td>
-            <td> 7 </td>
-            <td> 25.00% </td>
-            <td> 5 </td>
-            <td> 18.52% </td>
-            <td> 9 </td>
-            <td> 33.33% </td>
-            <td> 3 </td>
-            <td> 11.11% </td>
-            <td> 8 </td>
-            <td> 28.57% </td>
-            <td> 35 </td>
-            <td> 23.5%</td>
-        </tr>
-    </tbody>
-</table>
-<hr class="my-4">    
-<!-- FI TAULA TERCER TRIMESTRE ESO -->
+<!-- FI TAULA PRIMER ESO -->
 
 <!-- Chart -->
 <div style="width: 75%">
     <canvas id="canvas"></canvas>
 </div>
-<button id="randomizeData">Randomize Data</button>
 <!-- End Chart -->
-
-
-<!--
-<div class="container">
-    <div style="width:75%;">
-        <canvas id="canvas"></canvas>
-    </div>
-<br>
-    <button id="randomizeData">Randomize Data</button>
-    <button id="addDataset">Add Dataset</button>
-    <button id="removeDataset">Remove Dataset</button>
-    <button id="addData">Add Data</button>
-    <button id="removeData">Remove Data</button>
-    <br />
-<br />    
-<br />
-<br />
-</div>
- -->
 
 <!-- List of activities  -->
 <div class="col-md-12" id="activities-list">
@@ -465,10 +229,9 @@
 
 <script type="text/javascript">
     var mydatasets = '{{ datasets }}';
-  </script>
+</script>
 
 <script>
-
 window.onload = function() {
     var encodedStr = '{{ datasets }}';
     var parser = new DOMParser;
@@ -479,17 +242,10 @@ window.onload = function() {
 
     console.log(JSON.parse(decodedString));
 
-
-
-
     var barChartData = {
         labels: ["1r A", "1r B", "1r C", "1r D"],
         datasets: JSON.parse(decodedString)
     };
-
-
-
-
 
     var ctx = document.getElementById("canvas").getContext("2d");
     window.myBar = new Chart(ctx, {
@@ -516,16 +272,6 @@ window.onload = function() {
         }
     });
 };
-
-/*
-document.getElementById('randomizeData').addEventListener('click', function() {
-    barChartData.datasets.forEach(function(dataset, i) {
-        dataset.data = dataset.data.map(function() {
-            return randomScalingFactor();
-        });
-    });
-    window.myBar.update();
-});*/
 
 </script>
 

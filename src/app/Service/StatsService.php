@@ -26,8 +26,10 @@ class StatsService {
 
         $params['group_name'] = 'D';
         $result[] = $this->getESOGroupStats($params);
-
+   
         return $result;
+
+
 
     }
 
@@ -46,6 +48,21 @@ class StatsService {
         
                 $params['group_name'] = 'D';
                 $result[] = $this->getFPGroupStats($params);
+        
+                return $result;
+        
+    }
+
+    function getCASStats($params){
+        
+                $result = [];
+                
+                $params['group_name'] = 'A';
+                $result[] = $this->getCASGroupStats($params);
+        
+                $params['group_name'] = 'B';
+                $result[] = $this->getCASGroupStats($params);
+    
         
                 return $result;
         
@@ -86,6 +103,9 @@ class StatsService {
             $stmt->execute();
             $result = $stmt->fetchObject();
 
+
+
+            
             return $result->total;
 
         }catch(PDOException $e){
@@ -93,6 +113,49 @@ class StatsService {
             return $error;
         }
     }
+
+    function getCASGroupStats($params){
+        
+
+        if ($params['filter'] == 'tot-aprobat') {
+            $sql = "select count(distinct `SubjectCAS_EnrollmentCAS`.`idEnrollment`) AS `total` from `SubjectCAS_EnrollmentCAS` where ((not(`SubjectCAS_EnrollmentCAS`.`idEnrollment` in (select distinct `SubjectCAS_EnrollmentCAS`.`idEnrollment` from `SubjectCAS_EnrollmentCAS` where ((`SubjectCAS_EnrollmentCAS`.`value` < :value) and (`SubjectCAS_EnrollmentCAS`.`idCAS` like :idCAS) and (`SubjectCAS_EnrollmentCAS`.`group_name` like :group_name))))) and (`SubjectCAS_EnrollmentCAS`.`idCAS` like :idCAS) and (`SubjectCAS_EnrollmentCAS`.`group_name` like :group_name))";
+            $value = 5;
+        }
+
+        if ($params['filter'] == '1o2-suspeses') {
+            $sql = "select count(*) AS `total` from (select `project.local`.`SubjectCAS_EnrollmentCAS`.`idEnrollment` AS `idEnrollment`,count(`project.local`.`SubjectCAS_EnrollmentCAS`.`value`) AS `suspendidas` from `project.local`.`SubjectCAS_EnrollmentCAS` where ((`project.local`.`SubjectCAS_EnrollmentCAS`.`value` < :value) and (`project.local`.`SubjectCAS_EnrollmentCAS`.`idCAS` like :idCAS) and (`project.local`.`SubjectCAS_EnrollmentCAS`.`group_name` like :group_name)) group by `project.local`.`SubjectCAS_EnrollmentCAS`.`idEnrollment` having (`suspendidas` < 3)) `T1`";
+            $value = 5;
+        }
+        if ($params['filter'] == '3o4-suspeses') {
+            $sql = "select count(*) AS `total` from (select `project.local`.`SubjectCAS_EnrollmentCAS`.`idEnrollment` AS `idEnrollment`,count(`project.local`.`SubjectCAS_EnrollmentCAS`.`value`) AS `suspendidas` from `project.local`.`SubjectCAS_EnrollmentCAS` where ((`project.local`.`SubjectCAS_EnrollmentCAS`.`value` < :value) and (`project.local`.`SubjectCAS_EnrollmentCAS`.`idCAS` like :idCAS) and (`project.local`.`SubjectCAS_EnrollmentCAS`.`group_name` like :group_name)) group by `project.local`.`SubjectCAS_EnrollmentCAS`.`idEnrollment` having ((`suspendidas` > 2) and (`suspendidas` < 5))) `T1`";
+            $value = 5;
+        }
+        if ($params['filter'] == '5omes-suspeses') {
+            $sql = "select count(*) AS `total` from (select `project.local`.`SubjectCAS_EnrollmentCAS`.`idEnrollment` AS `idEnrollment`,count(`project.local`.`SubjectCAS_EnrollmentCAS`.`value`) AS `suspendidas` from `project.local`.`SubjectCAS_EnrollmentCAS` where ((`project.local`.`SubjectCAS_EnrollmentCAS`.`value` < :value) and (`project.local`.`SubjectCAS_EnrollmentCAS`.`idCAS` like :idCAS) and (`project.local`.`SubjectCAS_EnrollmentCAS`.`group_name` like :group_name)) group by `project.local`.`SubjectCAS_EnrollmentCAS`.`idEnrollment` having (`suspendidas` >= 5)) `T1`";
+            $value = 5;
+        }
+        
+        $idCAS = $params['idCAS'];
+        $group_name = $params['group_name'];
+
+
+        try{
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam("value", $value);
+            $stmt->bindParam("idCAS", $idCAS);
+            $stmt->bindParam("group_name", $group_name);
+
+            $stmt->execute();
+            $result = $stmt->fetchObject();
+
+            return $result->total;
+
+        }catch(PDOException $e){
+            $error = array("error" => array("text" => $e->getMessage()));
+            return $error;
+        }
+    }
+
 
     function getFPGroupStats($params){
         
@@ -198,6 +261,7 @@ class StatsService {
                 return $error;
             }
     } 
+    
 
 }
 ?>
