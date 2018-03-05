@@ -25979,360 +25979,360 @@ CREATE TABLE `User` (
 --
 -- Estructura para la vista `1_2Suspendidas_1ESOA_view`
 --
-DROP TABLE IF EXISTS `1_2Suspendidas_1ESOA_view`;
+-- DROP TABLE IF EXISTS `1_2Suspendidas_1ESOA_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `1_2Suspendidas_1ESOA_view`  AS  select count(0) AS `COUNT(*)` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'A')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` < 3)) `T1` ;
+-- CREATE   VIEW `1_2Suspendidas_1ESOA_view`  AS  select count(0) AS `COUNT(*)` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'A')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` < 3)) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `1_2Suspendidas_1ESOB_view`
 --
-DROP TABLE IF EXISTS `1_2Suspendidas_1ESOB_view`;
+-- DROP TABLE IF EXISTS `1_2Suspendidas_1ESOB_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `1_2Suspendidas_1ESOB_view`  AS  select count(0) AS `COUNT(*)` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'B')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` < 3)) `T1` ;
+-- CREATE   VIEW `1_2Suspendidas_1ESOB_view`  AS  select count(0) AS `COUNT(*)` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'B')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` < 3)) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `1_2Suspendidas_1ESOC_view`
 --
-DROP TABLE IF EXISTS `1_2Suspendidas_1ESOC_view`;
+-- DROP TABLE IF EXISTS `1_2Suspendidas_1ESOC_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `1_2Suspendidas_1ESOC_view`  AS  select count(0) AS `COUNT(*)` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'C')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` < 3)) `T1` ;
+-- CREATE   VIEW `1_2Suspendidas_1ESOC_view`  AS  select count(0) AS `COUNT(*)` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'C')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` < 3)) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `1_2Suspendidas_1ESOD_view`
 --
-DROP TABLE IF EXISTS `1_2Suspendidas_1ESOD_view`;
+-- DROP TABLE IF EXISTS `1_2Suspendidas_1ESOD_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `1_2Suspendidas_1ESOD_view`  AS  select count(0) AS `COUNT(*)` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'D')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` < 3)) `T1` ;
+-- CREATE   VIEW `1_2Suspendidas_1ESOD_view`  AS  select count(0) AS `COUNT(*)` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'D')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` < 3)) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `1_2Suspendidas_2ESOA_view`
 --
-DROP TABLE IF EXISTS `1_2Suspendidas_2ESOA_view`;
+-- DROP TABLE IF EXISTS `1_2Suspendidas_2ESOA_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `1_2Suspendidas_2ESOA_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'A')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` < 3)) `T1` ;
+-- CREATE   VIEW `1_2Suspendidas_2ESOA_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'A')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` < 3)) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `1_2Suspendidas_2ESOB_view`
 --
-DROP TABLE IF EXISTS `1_2Suspendidas_2ESOB_view`;
+-- DROP TABLE IF EXISTS `1_2Suspendidas_2ESOB_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `1_2Suspendidas_2ESOB_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'B')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` < 3)) `T1` ;
+-- CREATE   VIEW `1_2Suspendidas_2ESOB_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'B')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` < 3)) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `1_2Suspendidas_2ESOC_view`
 --
-DROP TABLE IF EXISTS `1_2Suspendidas_2ESOC_view`;
+-- DROP TABLE IF EXISTS `1_2Suspendidas_2ESOC_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `1_2Suspendidas_2ESOC_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'C')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` < 3)) `T1` ;
+-- CREATE   VIEW `1_2Suspendidas_2ESOC_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'C')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` < 3)) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `1_2Suspendidas_2ESOD_view`
 --
-DROP TABLE IF EXISTS `1_2Suspendidas_2ESOD_view`;
+-- DROP TABLE IF EXISTS `1_2Suspendidas_2ESOD_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `1_2Suspendidas_2ESOD_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'D')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` < 3)) `T1` ;
+-- CREATE   VIEW `1_2Suspendidas_2ESOD_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'D')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` < 3)) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `3_4Suspendidas_1ESOA_view`
 --
-DROP TABLE IF EXISTS `3_4Suspendidas_1ESOA_view`;
+-- DROP TABLE IF EXISTS `3_4Suspendidas_1ESOA_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `3_4Suspendidas_1ESOA_view`  AS  select count(0) AS `COUNT(*)` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'A')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having ((`suspendidas` > 2) and (`suspendidas` < 5))) `T1` ;
+-- CREATE   VIEW `3_4Suspendidas_1ESOA_view`  AS  select count(0) AS `COUNT(*)` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'A')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having ((`suspendidas` > 2) and (`suspendidas` < 5))) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `3_4Suspendidas_1ESOB_view`
 --
-DROP TABLE IF EXISTS `3_4Suspendidas_1ESOB_view`;
+-- DROP TABLE IF EXISTS `3_4Suspendidas_1ESOB_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `3_4Suspendidas_1ESOB_view`  AS  select count(0) AS `COUNT(*)` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'B')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having ((`suspendidas` > 2) and (`suspendidas` < 5))) `T1` ;
+-- CREATE   VIEW `3_4Suspendidas_1ESOB_view`  AS  select count(0) AS `COUNT(*)` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'B')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having ((`suspendidas` > 2) and (`suspendidas` < 5))) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `3_4Suspendidas_1ESOC_view`
 --
-DROP TABLE IF EXISTS `3_4Suspendidas_1ESOC_view`;
+-- DROP TABLE IF EXISTS `3_4Suspendidas_1ESOC_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `3_4Suspendidas_1ESOC_view`  AS  select count(0) AS `COUNT(*)` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'C')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having ((`suspendidas` > 2) and (`suspendidas` < 5))) `T1` ;
+-- CREATE   VIEW `3_4Suspendidas_1ESOC_view`  AS  select count(0) AS `COUNT(*)` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'C')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having ((`suspendidas` > 2) and (`suspendidas` < 5))) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `3_4Suspendidas_1ESOD_view`
 --
-DROP TABLE IF EXISTS `3_4Suspendidas_1ESOD_view`;
+-- DROP TABLE IF EXISTS `3_4Suspendidas_1ESOD_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `3_4Suspendidas_1ESOD_view`  AS  select count(0) AS `COUNT(*)` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'D')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having ((`suspendidas` > 2) and (`suspendidas` < 5))) `T1` ;
+-- CREATE   VIEW `3_4Suspendidas_1ESOD_view`  AS  select count(0) AS `COUNT(*)` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'D')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having ((`suspendidas` > 2) and (`suspendidas` < 5))) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `3_4Suspendidas_2ESOA_view`
 --
-DROP TABLE IF EXISTS `3_4Suspendidas_2ESOA_view`;
+-- DROP TABLE IF EXISTS `3_4Suspendidas_2ESOA_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `3_4Suspendidas_2ESOA_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'A')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having ((`suspendidas` > 2) and (`suspendidas` < 5))) `T1` ;
+-- CREATE   VIEW `3_4Suspendidas_2ESOA_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'A')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having ((`suspendidas` > 2) and (`suspendidas` < 5))) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `3_4Suspendidas_2ESOB_view`
 --
-DROP TABLE IF EXISTS `3_4Suspendidas_2ESOB_view`;
+-- DROP TABLE IF EXISTS `3_4Suspendidas_2ESOB_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `3_4Suspendidas_2ESOB_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'B')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having ((`suspendidas` > 2) and (`suspendidas` < 5))) `T1` ;
+-- CREATE   VIEW `3_4Suspendidas_2ESOB_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'B')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having ((`suspendidas` > 2) and (`suspendidas` < 5))) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `3_4Suspendidas_2ESOC_view`
 --
-DROP TABLE IF EXISTS `3_4Suspendidas_2ESOC_view`;
+-- DROP TABLE IF EXISTS `3_4Suspendidas_2ESOC_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `3_4Suspendidas_2ESOC_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'C')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having ((`suspendidas` > 2) and (`suspendidas` < 5))) `T1` ;
+-- CREATE   VIEW `3_4Suspendidas_2ESOC_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'C')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having ((`suspendidas` > 2) and (`suspendidas` < 5))) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `3_4Suspendidas_2ESOD_view`
 --
-DROP TABLE IF EXISTS `3_4Suspendidas_2ESOD_view`;
+-- DROP TABLE IF EXISTS `3_4Suspendidas_2ESOD_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `3_4Suspendidas_2ESOD_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'D')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having ((`suspendidas` > 2) and (`suspendidas` < 5))) `T1` ;
+-- CREATE   VIEW `3_4Suspendidas_2ESOD_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'D')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having ((`suspendidas` > 2) and (`suspendidas` < 5))) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `5_masSuspendidas_1ESOA_view`
 --
-DROP TABLE IF EXISTS `5_masSuspendidas_1ESOA_view`;
+-- DROP TABLE IF EXISTS `5_masSuspendidas_1ESOA_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `5_masSuspendidas_1ESOA_view`  AS  select count(0) AS `COUNT(*)` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'A')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
+-- CREATE   VIEW `5_masSuspendidas_1ESOA_view`  AS  select count(0) AS `COUNT(*)` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'A')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `5_masSuspendidas_1ESOB_view`
 --
-DROP TABLE IF EXISTS `5_masSuspendidas_1ESOB_view`;
+-- DROP TABLE IF EXISTS `5_masSuspendidas_1ESOB_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `5_masSuspendidas_1ESOB_view`  AS  select count(0) AS `COUNT(*)` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'B')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
+-- CREATE   VIEW `5_masSuspendidas_1ESOB_view`  AS  select count(0) AS `COUNT(*)` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'B')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `5_masSuspendidas_1ESOC_view`
 --
-DROP TABLE IF EXISTS `5_masSuspendidas_1ESOC_view`;
+-- DROP TABLE IF EXISTS `5_masSuspendidas_1ESOC_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `5_masSuspendidas_1ESOC_view`  AS  select count(0) AS `COUNT(*)` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'C')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
+-- CREATE   VIEW `5_masSuspendidas_1ESOC_view`  AS  select count(0) AS `COUNT(*)` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'C')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `5_masSuspendidas_1ESOD_view`
 --
-DROP TABLE IF EXISTS `5_masSuspendidas_1ESOD_view`;
+-- DROP TABLE IF EXISTS `5_masSuspendidas_1ESOD_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `5_masSuspendidas_1ESOD_view`  AS  select count(0) AS `COUNT(*)` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'D')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
+-- CREATE   VIEW `5_masSuspendidas_1ESOD_view`  AS  select count(0) AS `COUNT(*)` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'D')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `5_masSuspendidas_2ESOA_view`
 --
-DROP TABLE IF EXISTS `5_masSuspendidas_2ESOA_view`;
+-- DROP TABLE IF EXISTS `5_masSuspendidas_2ESOA_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `5_masSuspendidas_2ESOA_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'A')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
+-- CREATE   VIEW `5_masSuspendidas_2ESOA_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'A')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `5_masSuspendidas_2ESOB_view`
 --
-DROP TABLE IF EXISTS `5_masSuspendidas_2ESOB_view`;
+-- DROP TABLE IF EXISTS `5_masSuspendidas_2ESOB_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `5_masSuspendidas_2ESOB_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'B')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
+-- CREATE   VIEW `5_masSuspendidas_2ESOB_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'B')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `5_masSuspendidas_2ESOC_view`
 --
-DROP TABLE IF EXISTS `5_masSuspendidas_2ESOC_view`;
+-- DROP TABLE IF EXISTS `5_masSuspendidas_2ESOC_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `5_masSuspendidas_2ESOC_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'C')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
+-- CREATE   VIEW `5_masSuspendidas_2ESOC_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'C')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `5_masSuspendidas_2ESOD_view`
 --
-DROP TABLE IF EXISTS `5_masSuspendidas_2ESOD_view`;
+-- DROP TABLE IF EXISTS `5_masSuspendidas_2ESOD_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `5_masSuspendidas_2ESOD_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'D')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
+-- CREATE   VIEW `5_masSuspendidas_2ESOD_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'D')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `5_masSuspendidas_3ESOA_view`
 --
-DROP TABLE IF EXISTS `5_masSuspendidas_3ESOA_view`;
+-- DROP TABLE IF EXISTS `5_masSuspendidas_3ESOA_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `5_masSuspendidas_3ESOA_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 3) and (`SubjectESO_EnrollmentESO`.`group_name` like 'A')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
+-- CREATE   VIEW `5_masSuspendidas_3ESOA_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 3) and (`SubjectESO_EnrollmentESO`.`group_name` like 'A')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `5_masSuspendidas_3ESOB_view`
 --
-DROP TABLE IF EXISTS `5_masSuspendidas_3ESOB_view`;
+-- DROP TABLE IF EXISTS `5_masSuspendidas_3ESOB_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `5_masSuspendidas_3ESOB_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 3) and (`SubjectESO_EnrollmentESO`.`group_name` like 'B')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
+-- CREATE   VIEW `5_masSuspendidas_3ESOB_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 3) and (`SubjectESO_EnrollmentESO`.`group_name` like 'B')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `5_masSuspendidas_3ESOC_view`
 --
-DROP TABLE IF EXISTS `5_masSuspendidas_3ESOC_view`;
+-- DROP TABLE IF EXISTS `5_masSuspendidas_3ESOC_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `5_masSuspendidas_3ESOC_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 3) and (`SubjectESO_EnrollmentESO`.`group_name` like 'C')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
+-- CREATE   VIEW `5_masSuspendidas_3ESOC_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 3) and (`SubjectESO_EnrollmentESO`.`group_name` like 'C')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `5_masSuspendidas_3ESOD_view`
 --
-DROP TABLE IF EXISTS `5_masSuspendidas_3ESOD_view`;
+-- DROP TABLE IF EXISTS `5_masSuspendidas_3ESOD_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `5_masSuspendidas_3ESOD_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 3) and (`SubjectESO_EnrollmentESO`.`group_name` like 'D')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
+-- CREATE   VIEW `5_masSuspendidas_3ESOD_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 3) and (`SubjectESO_EnrollmentESO`.`group_name` like 'D')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `5_masSuspendidas_4ESOA_view`
 --
-DROP TABLE IF EXISTS `5_masSuspendidas_4ESOA_view`;
+-- DROP TABLE IF EXISTS `5_masSuspendidas_4ESOA_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `5_masSuspendidas_4ESOA_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 4) and (`SubjectESO_EnrollmentESO`.`group_name` like 'A')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
+-- CREATE   VIEW `5_masSuspendidas_4ESOA_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 4) and (`SubjectESO_EnrollmentESO`.`group_name` like 'A')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `5_masSuspendidas_4ESOB_view`
 --
-DROP TABLE IF EXISTS `5_masSuspendidas_4ESOB_view`;
+-- DROP TABLE IF EXISTS `5_masSuspendidas_4ESOB_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `5_masSuspendidas_4ESOB_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 4) and (`SubjectESO_EnrollmentESO`.`group_name` like 'B')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
+-- CREATE   VIEW `5_masSuspendidas_4ESOB_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 4) and (`SubjectESO_EnrollmentESO`.`group_name` like 'B')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `5_masSuspendidas_4ESOC_view`
 --
-DROP TABLE IF EXISTS `5_masSuspendidas_4ESOC_view`;
+-- DROP TABLE IF EXISTS `5_masSuspendidas_4ESOC_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `5_masSuspendidas_4ESOC_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 4) and (`SubjectESO_EnrollmentESO`.`group_name` like 'C')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
+-- CREATE   VIEW `5_masSuspendidas_4ESOC_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 4) and (`SubjectESO_EnrollmentESO`.`group_name` like 'C')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `5_masSuspendidas_4ESOD_view`
 --
-DROP TABLE IF EXISTS `5_masSuspendidas_4ESOD_view`;
+-- DROP TABLE IF EXISTS `5_masSuspendidas_4ESOD_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `5_masSuspendidas_4ESOD_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 4) and (`SubjectESO_EnrollmentESO`.`group_name` like 'D')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
+-- CREATE   VIEW `5_masSuspendidas_4ESOD_view`  AS  select count(0) AS `total` from (select `SubjectESO_EnrollmentESO`.`idEnrollment` AS `idEnrollment`,count(`SubjectESO_EnrollmentESO`.`value`) AS `suspendidas` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 4) and (`SubjectESO_EnrollmentESO`.`group_name` like 'D')) group by `SubjectESO_EnrollmentESO`.`idEnrollment` having (`suspendidas` >= 5)) `T1` ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `totAprobat_1ESOA_view`
 --
-DROP TABLE IF EXISTS `totAprobat_1ESOA_view`;
+-- DROP TABLE IF EXISTS `totAprobat_1ESOA_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `totAprobat_1ESOA_view`  AS  select count(distinct `SubjectESO_EnrollmentESO`.`idEnrollment`) AS `count( DISTINCT idEnrollment)` from `SubjectESO_EnrollmentESO` where ((not(`SubjectESO_EnrollmentESO`.`idEnrollment` in (select distinct `SubjectESO_EnrollmentESO`.`idEnrollment` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'A'))))) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'A')) ;
+-- CREATE   VIEW `totAprobat_1ESOA_view`  AS  select count(distinct `SubjectESO_EnrollmentESO`.`idEnrollment`) AS `count( DISTINCT idEnrollment)` from `SubjectESO_EnrollmentESO` where ((not(`SubjectESO_EnrollmentESO`.`idEnrollment` in (select distinct `SubjectESO_EnrollmentESO`.`idEnrollment` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'A'))))) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'A')) ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `totAprobat_1ESOB_view`
 --
-DROP TABLE IF EXISTS `totAprobat_1ESOB_view`;
+-- DROP TABLE IF EXISTS `totAprobat_1ESOB_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `totAprobat_1ESOB_view`  AS  select count(distinct `SubjectESO_EnrollmentESO`.`idEnrollment`) AS `count( DISTINCT idEnrollment)` from `SubjectESO_EnrollmentESO` where ((not(`SubjectESO_EnrollmentESO`.`idEnrollment` in (select distinct `SubjectESO_EnrollmentESO`.`idEnrollment` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'B'))))) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'B')) ;
+-- CREATE   VIEW `totAprobat_1ESOB_view`  AS  select count(distinct `SubjectESO_EnrollmentESO`.`idEnrollment`) AS `count( DISTINCT idEnrollment)` from `SubjectESO_EnrollmentESO` where ((not(`SubjectESO_EnrollmentESO`.`idEnrollment` in (select distinct `SubjectESO_EnrollmentESO`.`idEnrollment` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'B'))))) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'B')) ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `totAprobat_1ESOC_view`
 --
-DROP TABLE IF EXISTS `totAprobat_1ESOC_view`;
+-- DROP TABLE IF EXISTS `totAprobat_1ESOC_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `totAprobat_1ESOC_view`  AS  select count(distinct `SubjectESO_EnrollmentESO`.`idEnrollment`) AS `count( DISTINCT idEnrollment)` from `SubjectESO_EnrollmentESO` where ((not(`SubjectESO_EnrollmentESO`.`idEnrollment` in (select distinct `SubjectESO_EnrollmentESO`.`idEnrollment` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'C'))))) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'C')) ;
+-- CREATE   VIEW `totAprobat_1ESOC_view`  AS  select count(distinct `SubjectESO_EnrollmentESO`.`idEnrollment`) AS `count( DISTINCT idEnrollment)` from `SubjectESO_EnrollmentESO` where ((not(`SubjectESO_EnrollmentESO`.`idEnrollment` in (select distinct `SubjectESO_EnrollmentESO`.`idEnrollment` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'C'))))) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'C')) ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `totAprobat_1ESOD_view`
 --
-DROP TABLE IF EXISTS `totAprobat_1ESOD_view`;
+-- DROP TABLE IF EXISTS `totAprobat_1ESOD_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `totAprobat_1ESOD_view`  AS  select count(distinct `SubjectESO_EnrollmentESO`.`idEnrollment`) AS `count( DISTINCT idEnrollment)` from `SubjectESO_EnrollmentESO` where ((not(`SubjectESO_EnrollmentESO`.`idEnrollment` in (select distinct `SubjectESO_EnrollmentESO`.`idEnrollment` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'D'))))) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'D')) ;
+-- CREATE   VIEW `totAprobat_1ESOD_view`  AS  select count(distinct `SubjectESO_EnrollmentESO`.`idEnrollment`) AS `count( DISTINCT idEnrollment)` from `SubjectESO_EnrollmentESO` where ((not(`SubjectESO_EnrollmentESO`.`idEnrollment` in (select distinct `SubjectESO_EnrollmentESO`.`idEnrollment` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'D'))))) and (`SubjectESO_EnrollmentESO`.`idESO` like 1) and (`SubjectESO_EnrollmentESO`.`group_name` like 'D')) ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `totAprobat_2ESOA_view`
 --
-DROP TABLE IF EXISTS `totAprobat_2ESOA_view`;
+-- DROP TABLE IF EXISTS `totAprobat_2ESOA_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `totAprobat_2ESOA_view`  AS  select count(distinct `SubjectESO_EnrollmentESO`.`idEnrollment`) AS `total` from `SubjectESO_EnrollmentESO` where ((not(`SubjectESO_EnrollmentESO`.`idEnrollment` in (select distinct `SubjectESO_EnrollmentESO`.`idEnrollment` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'A'))))) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'A')) ;
+-- CREATE   VIEW `totAprobat_2ESOA_view`  AS  select count(distinct `SubjectESO_EnrollmentESO`.`idEnrollment`) AS `total` from `SubjectESO_EnrollmentESO` where ((not(`SubjectESO_EnrollmentESO`.`idEnrollment` in (select distinct `SubjectESO_EnrollmentESO`.`idEnrollment` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'A'))))) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'A')) ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `totAprobat_2ESOB_view`
 --
-DROP TABLE IF EXISTS `totAprobat_2ESOB_view`;
+-- DROP TABLE IF EXISTS `totAprobat_2ESOB_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `totAprobat_2ESOB_view`  AS  select count(distinct `SubjectESO_EnrollmentESO`.`idEnrollment`) AS `total` from `SubjectESO_EnrollmentESO` where ((not(`SubjectESO_EnrollmentESO`.`idEnrollment` in (select distinct `SubjectESO_EnrollmentESO`.`idEnrollment` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'B'))))) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'B')) ;
+-- CREATE   VIEW `totAprobat_2ESOB_view`  AS  select count(distinct `SubjectESO_EnrollmentESO`.`idEnrollment`) AS `total` from `SubjectESO_EnrollmentESO` where ((not(`SubjectESO_EnrollmentESO`.`idEnrollment` in (select distinct `SubjectESO_EnrollmentESO`.`idEnrollment` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'B'))))) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'B')) ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `totAprobat_2ESOC_view`
 --
-DROP TABLE IF EXISTS `totAprobat_2ESOC_view`;
+-- DROP TABLE IF EXISTS `totAprobat_2ESOC_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `totAprobat_2ESOC_view`  AS  select count(distinct `SubjectESO_EnrollmentESO`.`idEnrollment`) AS `total` from `SubjectESO_EnrollmentESO` where ((not(`SubjectESO_EnrollmentESO`.`idEnrollment` in (select distinct `SubjectESO_EnrollmentESO`.`idEnrollment` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'C'))))) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'C')) ;
+-- CREATE   VIEW `totAprobat_2ESOC_view`  AS  select count(distinct `SubjectESO_EnrollmentESO`.`idEnrollment`) AS `total` from `SubjectESO_EnrollmentESO` where ((not(`SubjectESO_EnrollmentESO`.`idEnrollment` in (select distinct `SubjectESO_EnrollmentESO`.`idEnrollment` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'C'))))) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'C')) ;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura para la vista `totAprobat_2ESOD_view`
 --
-DROP TABLE IF EXISTS `totAprobat_2ESOD_view`;
+-- DROP TABLE IF EXISTS `totAprobat_2ESOD_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `totAprobat_2ESOD_view`  AS  select count(distinct `SubjectESO_EnrollmentESO`.`idEnrollment`) AS `total` from `SubjectESO_EnrollmentESO` where ((not(`SubjectESO_EnrollmentESO`.`idEnrollment` in (select distinct `SubjectESO_EnrollmentESO`.`idEnrollment` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'D'))))) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'D')) ;
+-- CREATE   VIEW `totAprobat_2ESOD_view`  AS  select count(distinct `SubjectESO_EnrollmentESO`.`idEnrollment`) AS `total` from `SubjectESO_EnrollmentESO` where ((not(`SubjectESO_EnrollmentESO`.`idEnrollment` in (select distinct `SubjectESO_EnrollmentESO`.`idEnrollment` from `SubjectESO_EnrollmentESO` where ((`SubjectESO_EnrollmentESO`.`value` < 5) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'D'))))) and (`SubjectESO_EnrollmentESO`.`idESO` like 2) and (`SubjectESO_EnrollmentESO`.`group_name` like 'D')) ;
 
 --
 -- Índices para tablas volcadas
