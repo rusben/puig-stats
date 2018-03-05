@@ -56,11 +56,11 @@ $app->get('/profile_page', function ($request, $response, $args) {
 
     $datasets = array($tot_aprobat, $suspeses1o2, $suspeses3o4, $suspeses5omes);
 
- print_r("<pre>");
-  print_r($datasets);
-  print_r($tot_aprobat + $suspeses1o2 + $suspeses3o4 + $suspeses5omes);
-   print_r("</pre>");
-  die("---"); 
+// print_r("<pre>");
+//  print_r($datasets);
+//  print_r($tot_aprobat + $suspeses1o2 + $suspeses3o4 + $suspeses5omes);
+//   print_r("</pre>");
+//  die("---"); 
 
     
     return $this->view->render($response, 'curs1reso.html', [
