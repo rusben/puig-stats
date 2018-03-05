@@ -223,8 +223,6 @@ $app->get('/profile_page', function ($request, $response, $args) {
 
     $suspeses5omes->data = $this->StatsService->getESOStats($params);
 
-   
-
     $datasets = array($tot_aprobat, $suspeses1o2, $suspeses3o4, $suspeses5omes);
 
     
@@ -233,8 +231,6 @@ $app->get('/profile_page', function ($request, $response, $args) {
        'datasets' => json_encode($datasets)
     ]);
     })->setName('curs4teso');
-
-
 
 
 // CURS BATXILLERAT ARTISTIC

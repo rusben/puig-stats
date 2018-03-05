@@ -1,5 +1,5 @@
-# slimer
-Slim skeleton - PDO, JWT, TWIG
+# puig-stats
+El Puig Stats
 
 ## Slim Framework 3 Skeleton Application
 
